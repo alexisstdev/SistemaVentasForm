@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,6 @@
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtIDAuxiliar = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbxBuscar = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -148,6 +148,7 @@
             this.dtgUsuarios.AllowUserToDeleteRows = false;
             this.dtgUsuarios.AllowUserToResizeColumns = false;
             this.dtgUsuarios.AllowUserToResizeRows = false;
+            this.dtgUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
             this.dtgUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -187,6 +188,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
+            this.dtgUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dtgUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgUsuarios.ShowCellErrors = false;
@@ -204,6 +207,7 @@
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ID.Width = 35;
             // 
             // Nombre
             // 
@@ -212,7 +216,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Nombre.Width = 370;
+            this.Nombre.Width = 90;
             // 
             // Correo
             // 
@@ -221,7 +225,7 @@
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
             this.Correo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Correo.Width = 250;
+            this.Correo.Width = 79;
             // 
             // Rol
             // 
@@ -230,7 +234,7 @@
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
             this.Rol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Rol.Width = 150;
+            this.Rol.Width = 43;
             // 
             // Contraseña
             // 
@@ -238,6 +242,7 @@
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.ReadOnly = true;
             this.Contraseña.Visible = false;
+            this.Contraseña.Width = 144;
             // 
             // label8
             // 
@@ -251,18 +256,6 @@
             this.label8.Size = new System.Drawing.Size(183, 25);
             this.label8.TabIndex = 88;
             this.label8.Text = "Lista de usuarios";
-            // 
-            // txtIDAuxiliar
-            // 
-            this.txtIDAuxiliar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.txtIDAuxiliar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIDAuxiliar.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtIDAuxiliar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtIDAuxiliar.Location = new System.Drawing.Point(272, 54);
-            this.txtIDAuxiliar.Name = "txtIDAuxiliar";
-            this.txtIDAuxiliar.Size = new System.Drawing.Size(31, 23);
-            this.txtIDAuxiliar.TabIndex = 89;
-            this.txtIDAuxiliar.Visible = false;
             // 
             // label9
             // 
@@ -321,6 +314,7 @@
             this.btnBuscar.TabIndex = 93;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cbxRol
             // 
@@ -508,7 +502,6 @@
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.cbxBuscar);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtIDAuxiliar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtgUsuarios);
             this.Controls.Add(this.label7);
@@ -536,7 +529,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dtgUsuarios;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtIDAuxiliar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbxBuscar;
         private System.Windows.Forms.TextBox txtBusqueda;

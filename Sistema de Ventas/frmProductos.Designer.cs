@@ -1,6 +1,6 @@
 ﻿namespace Sistema_de_Ventas
 {
-    partial class frmClientes
+    partial class frmProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +38,7 @@
             this.cbxBuscar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtgClientes = new System.Windows.Forms.DataGridView();
+            this.dtgProductos = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
@@ -48,16 +48,22 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtTeléfono = new System.Windows.Forms.TextBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Teléfono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.datosContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIndex
@@ -70,7 +76,7 @@
             this.lblIndex.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.lblIndex.Name = "lblIndex";
             this.lblIndex.Size = new System.Drawing.Size(31, 25);
-            this.lblIndex.TabIndex = 107;
+            this.lblIndex.TabIndex = 119;
             this.lblIndex.Text = "-1";
             // 
             // btnBuscar
@@ -88,10 +94,9 @@
             this.btnBuscar.Location = new System.Drawing.Point(1205, 8);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 33);
-            this.btnBuscar.TabIndex = 105;
+            this.btnBuscar.TabIndex = 117;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtBusqueda
             // 
@@ -102,7 +107,7 @@
             this.txtBusqueda.Location = new System.Drawing.Point(919, 13);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(280, 23);
-            this.txtBusqueda.TabIndex = 104;
+            this.txtBusqueda.TabIndex = 116;
             // 
             // cbxBuscar
             // 
@@ -113,12 +118,11 @@
             this.cbxBuscar.Items.AddRange(new object[] {
             "ID",
             "Nombre",
-            "Correo",
-            "Teléfono"});
+            "Stock"});
             this.cbxBuscar.Location = new System.Drawing.Point(765, 10);
             this.cbxBuscar.Name = "cbxBuscar";
             this.cbxBuscar.Size = new System.Drawing.Size(148, 30);
-            this.cbxBuscar.TabIndex = 103;
+            this.cbxBuscar.TabIndex = 115;
             // 
             // label9
             // 
@@ -130,7 +134,7 @@
             this.label9.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(112, 22);
-            this.label9.TabIndex = 102;
+            this.label9.TabIndex = 114;
             this.label9.Text = "Buscar por:";
             // 
             // label8
@@ -142,21 +146,21 @@
             this.label8.Location = new System.Drawing.Point(343, 16);
             this.label8.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 25);
-            this.label8.TabIndex = 101;
-            this.label8.Text = "Lista de clientes";
+            this.label8.Size = new System.Drawing.Size(208, 25);
+            this.label8.TabIndex = 113;
+            this.label8.Text = "Lista de productos";
             // 
-            // dtgClientes
+            // dtgProductos
             // 
-            this.dtgClientes.AllowUserToAddRows = false;
-            this.dtgClientes.AllowUserToDeleteRows = false;
-            this.dtgClientes.AllowUserToResizeColumns = false;
-            this.dtgClientes.AllowUserToResizeRows = false;
-            this.dtgClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtgClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dtgClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            this.dtgClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dtgProductos.AllowUserToAddRows = false;
+            this.dtgProductos.AllowUserToDeleteRows = false;
+            this.dtgProductos.AllowUserToResizeColumns = false;
+            this.dtgProductos.AllowUserToResizeRows = false;
+            this.dtgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dtgProductos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            this.dtgProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgProductos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14F);
@@ -164,13 +168,14 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
-            this.Correo,
-            this.Teléfono});
+            this.Stock,
+            this.PrecioCompra,
+            this.PrecioVenta});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14F);
@@ -178,11 +183,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgClientes.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgClientes.Location = new System.Drawing.Point(348, 68);
-            this.dtgClientes.MultiSelect = false;
-            this.dtgClientes.Name = "dtgClientes";
-            this.dtgClientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtgProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgProductos.Location = new System.Drawing.Point(348, 68);
+            this.dtgProductos.MultiSelect = false;
+            this.dtgProductos.Name = "dtgProductos";
+            this.dtgProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14F);
@@ -190,18 +195,18 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dtgClientes.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgClientes.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dtgClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgClientes.ShowCellErrors = false;
-            this.dtgClientes.ShowCellToolTips = false;
-            this.dtgClientes.ShowEditingIcon = false;
-            this.dtgClientes.ShowRowErrors = false;
-            this.dtgClientes.Size = new System.Drawing.Size(912, 548);
-            this.dtgClientes.TabIndex = 100;
-            this.dtgClientes.SelectionChanged += new System.EventHandler(this.dtgClientes_SelectionChanged);
+            this.dtgProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgProductos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dtgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProductos.ShowCellErrors = false;
+            this.dtgProductos.ShowCellToolTips = false;
+            this.dtgProductos.ShowEditingIcon = false;
+            this.dtgProductos.ShowRowErrors = false;
+            this.dtgProductos.Size = new System.Drawing.Size(912, 548);
+            this.dtgProductos.TabIndex = 112;
+            this.dtgProductos.SelectionChanged += new System.EventHandler(this.dtgProductos_SelectionChanged);
             // 
             // label7
             // 
@@ -212,9 +217,9 @@
             this.label7.Location = new System.Drawing.Point(32, 10);
             this.label7.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(194, 25);
-            this.label7.TabIndex = 99;
-            this.label7.Text = "Datos del cliente";
+            this.label7.Size = new System.Drawing.Size(221, 25);
+            this.label7.TabIndex = 111;
+            this.label7.Text = "Datos del producto";
             // 
             // btnEliminar
             // 
@@ -232,7 +237,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(37, 506);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(266, 48);
-            this.btnEliminar.TabIndex = 98;
+            this.btnEliminar.TabIndex = 110;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -253,7 +258,7 @@
             this.btnLimpiar.Location = new System.Drawing.Point(37, 568);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(266, 48);
-            this.btnLimpiar.TabIndex = 97;
+            this.btnLimpiar.TabIndex = 109;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -274,7 +279,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(37, 445);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(266, 48);
-            this.btnGuardar.TabIndex = 96;
+            this.btnGuardar.TabIndex = 108;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -282,18 +287,20 @@
             // 
             // datosContainer
             // 
+            this.datosContainer.Controls.Add(this.label10);
+            this.datosContainer.Controls.Add(this.numericUpDown3);
+            this.datosContainer.Controls.Add(this.label6);
+            this.datosContainer.Controls.Add(this.numericUpDown2);
+            this.datosContainer.Controls.Add(this.label5);
+            this.datosContainer.Controls.Add(this.numericUpDown1);
             this.datosContainer.Controls.Add(this.txtID);
             this.datosContainer.Controls.Add(this.label4);
             this.datosContainer.Controls.Add(this.label1);
             this.datosContainer.Controls.Add(this.txtNombre);
-            this.datosContainer.Controls.Add(this.label3);
-            this.datosContainer.Controls.Add(this.txtCorreo);
-            this.datosContainer.Controls.Add(this.label2);
-            this.datosContainer.Controls.Add(this.txtTeléfono);
             this.datosContainer.Location = new System.Drawing.Point(23, 41);
             this.datosContainer.Name = "datosContainer";
             this.datosContainer.Size = new System.Drawing.Size(294, 399);
-            this.datosContainer.TabIndex = 106;
+            this.datosContainer.TabIndex = 118;
             // 
             // txtID
             // 
@@ -326,9 +333,9 @@
             this.label1.Location = new System.Drawing.Point(11, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 22);
+            this.label1.Size = new System.Drawing.Size(209, 22);
             this.label1.TabIndex = 73;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre del producto";
             // 
             // txtNombre
             // 
@@ -341,55 +348,97 @@
             this.txtNombre.Size = new System.Drawing.Size(266, 23);
             this.txtNombre.TabIndex = 74;
             // 
-            // label3
+            // numericUpDown1
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(11, 135);
-            this.label3.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 22);
-            this.label3.TabIndex = 75;
-            this.label3.Text = "Correo";
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown1.DecimalPlaces = 2;
+            this.numericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.numericUpDown1.Location = new System.Drawing.Point(14, 171);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(109, 26);
+            this.numericUpDown1.TabIndex = 79;
+            this.numericUpDown1.Tag = "";
+            this.numericUpDown1.ThousandsSeparator = true;
             // 
-            // txtCorreo
+            // label5
             // 
-            this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtCorreo.Location = new System.Drawing.Point(15, 166);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(266, 23);
-            this.txtCorreo.TabIndex = 76;
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(11, 144);
+            this.label5.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 22);
+            this.label5.TabIndex = 80;
+            this.label5.Text = "Compra $";
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(11, 198);
-            this.label2.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 22);
-            this.label2.TabIndex = 77;
-            this.label2.Text = "Teléfono";
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.Gray;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(169, 144);
+            this.label6.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(85, 22);
+            this.label6.TabIndex = 82;
+            this.label6.Text = "Venta $";
             // 
-            // txtTeléfono
+            // numericUpDown2
             // 
-            this.txtTeléfono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.txtTeléfono.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTeléfono.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtTeléfono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtTeléfono.Location = new System.Drawing.Point(15, 229);
-            this.txtTeléfono.Name = "txtTeléfono";
-            this.txtTeléfono.Size = new System.Drawing.Size(266, 23);
-            this.txtTeléfono.TabIndex = 78;
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown2.DecimalPlaces = 2;
+            this.numericUpDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.numericUpDown2.Location = new System.Drawing.Point(173, 171);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(107, 26);
+            this.numericUpDown2.TabIndex = 81;
+            this.numericUpDown2.Tag = "";
+            this.numericUpDown2.ThousandsSeparator = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Gray;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(12, 212);
+            this.label10.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(60, 22);
+            this.label10.TabIndex = 84;
+            this.label10.Text = "Stock";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numericUpDown3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.numericUpDown3.Location = new System.Drawing.Point(15, 237);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(109, 26);
+            this.numericUpDown3.TabIndex = 83;
+            this.numericUpDown3.Tag = "";
             // 
             // ID
             // 
-            this.ID.FillWeight = 32.65088F;
+            this.ID.FillWeight = 1.757324F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -398,43 +447,53 @@
             // 
             // Nombre
             // 
-            this.Nombre.FillWeight = 12.80631F;
+            this.Nombre.FillWeight = 10.38329F;
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Nombre.Width = 90;
             // 
-            // Correo
+            // Stock
             // 
-            this.Correo.FillWeight = 2.499833F;
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            this.Correo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Correo.Width = 79;
+            this.Stock.FillWeight = 9.07453F;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Stock.Width = 66;
             // 
-            // Teléfono
+            // PrecioCompra
             // 
-            this.Teléfono.HeaderText = "Teléfono";
-            this.Teléfono.Name = "Teléfono";
-            this.Teléfono.ReadOnly = true;
-            this.Teléfono.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Teléfono.Width = 93;
+            this.PrecioCompra.FillWeight = 7.346709F;
+            this.PrecioCompra.HeaderText = "PrecioCompra";
+            this.PrecioCompra.Name = "PrecioCompra";
+            this.PrecioCompra.ReadOnly = true;
+            this.PrecioCompra.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PrecioCompra.Width = 148;
             // 
-            // frmClientes
+            // PrecioVenta
+            // 
+            this.PrecioVenta.FillWeight = 6.057422F;
+            this.PrecioVenta.HeaderText = "PrecioVenta";
+            this.PrecioVenta.Name = "PrecioVenta";
+            this.PrecioVenta.ReadOnly = true;
+            this.PrecioVenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.PrecioVenta.Width = 131;
+            // 
+            // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1309, 662);
+            this.ClientSize = new System.Drawing.Size(1309, 663);
             this.Controls.Add(this.lblIndex);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.cbxBuscar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dtgClientes);
+            this.Controls.Add(this.dtgProductos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnLimpiar);
@@ -442,12 +501,14 @@
             this.Controls.Add(this.datosContainer);
             this.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.Name = "frmClientes";
-            this.Text = "frmClientes";
-            this.Load += new System.EventHandler(this.frmClientes_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).EndInit();
+            this.Name = "frmProductos";
+            this.Text = "frmProductos";
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.datosContainer.ResumeLayout(false);
             this.datosContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,7 +522,7 @@
         private System.Windows.Forms.ComboBox cbxBuscar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dtgClientes;
+        private System.Windows.Forms.DataGridView dtgProductos;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnLimpiar;
@@ -471,13 +532,16 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTeléfono;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Teléfono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
     }
 }

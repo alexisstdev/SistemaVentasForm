@@ -65,7 +65,12 @@ namespace Sistema_de_Ventas
             AbrirForms((IconMenuItem)sender, new frmClientes());
         }
 
-        private void menuUsuarios_Click(object sender, EventArgs e)
+        private void menuProductos_Click(object sender, EventArgs e)
+        {
+            AbrirForms((IconMenuItem)sender, new frmProductos());
+        }
+
+        private void menuUsuarios_Click_1(object sender, EventArgs e)
         {
             AbrirForms((IconMenuItem)sender, new frmUsuarios());
         }

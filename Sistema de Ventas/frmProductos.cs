@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sistema_de_Ventas
@@ -24,7 +17,7 @@ namespace Sistema_de_Ventas
             dtgProductos.Rows.Clear();
             foreach (Producto miProducto in miProducto.misProductos)
             {
-                dtgProductos.Rows.Add(miProducto.IDProducto, miProducto.NombreProducto);
+                dtgProductos.Rows.Add(miProducto.IDProducto, miProducto.NombreProducto, miProducto.StockProducto, miProducto.PrecioCompra, miProducto.PrecioVenta);
             }
         }
 
@@ -93,10 +86,15 @@ namespace Sistema_de_Ventas
             {
                 IDProducto = txtID.Text,
                 NombreProducto = txtNombre.Text,
-
+                StockProducto = (int)nudStock.Value,
+                PrecioCompra = (double)nudCompra.Value,
+                PrecioVenta = (double)nudVenta.Value,
             };
+
             miProducto.AñadirProducto(producto);
+
             ActualizarDataGrid();
+
             LimpiarDatos();
         }
 
@@ -115,6 +113,9 @@ namespace Sistema_de_Ventas
             {
                 txtID.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].IDProducto;
                 txtNombre.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].NombreProducto;
+                nudStock.Value = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].StockProducto;
+                nudCompra.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioCompra;
+                nudVenta.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioVenta;
             }
         }
 
@@ -128,7 +129,9 @@ namespace Sistema_de_Ventas
         {
             foreach (Control control in datosContainer.Controls)
             {
+                NumericUpDown nud = control as NumericUpDown;
                 if (control is TextBox) control.Text = "";
+                if (control is NumericUpDown) nud.Value = 0;
             }
         }
     }

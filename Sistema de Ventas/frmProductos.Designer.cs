@@ -48,12 +48,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudCompra = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudVenta = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,9 +61,9 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.datosContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             this.SuspendLayout();
             // 
             // lblIndex
@@ -288,11 +288,11 @@
             // datosContainer
             // 
             this.datosContainer.Controls.Add(this.label10);
-            this.datosContainer.Controls.Add(this.numericUpDown3);
+            this.datosContainer.Controls.Add(this.nudStock);
             this.datosContainer.Controls.Add(this.label6);
-            this.datosContainer.Controls.Add(this.numericUpDown2);
+            this.datosContainer.Controls.Add(this.nudVenta);
             this.datosContainer.Controls.Add(this.label5);
-            this.datosContainer.Controls.Add(this.numericUpDown1);
+            this.datosContainer.Controls.Add(this.nudCompra);
             this.datosContainer.Controls.Add(this.txtID);
             this.datosContainer.Controls.Add(this.label4);
             this.datosContainer.Controls.Add(this.label1);
@@ -348,23 +348,23 @@
             this.txtNombre.Size = new System.Drawing.Size(266, 23);
             this.txtNombre.TabIndex = 74;
             // 
-            // numericUpDown1
+            // nudCompra
             // 
-            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.numericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.numericUpDown1.Location = new System.Drawing.Point(14, 171);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudCompra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.nudCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudCompra.DecimalPlaces = 2;
+            this.nudCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.nudCompra.Location = new System.Drawing.Point(14, 171);
+            this.nudCompra.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(109, 26);
-            this.numericUpDown1.TabIndex = 79;
-            this.numericUpDown1.Tag = "";
-            this.numericUpDown1.ThousandsSeparator = true;
+            this.nudCompra.Name = "nudCompra";
+            this.nudCompra.Size = new System.Drawing.Size(109, 26);
+            this.nudCompra.TabIndex = 79;
+            this.nudCompra.Tag = "";
+            this.nudCompra.ThousandsSeparator = true;
             // 
             // label5
             // 
@@ -390,23 +390,23 @@
             this.label6.TabIndex = 82;
             this.label6.Text = "Venta $";
             // 
-            // numericUpDown2
+            // nudVenta
             // 
-            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.numericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown2.DecimalPlaces = 2;
-            this.numericUpDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.numericUpDown2.Location = new System.Drawing.Point(173, 171);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.nudVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.nudVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudVenta.DecimalPlaces = 2;
+            this.nudVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.nudVenta.Location = new System.Drawing.Point(173, 171);
+            this.nudVenta.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(107, 26);
-            this.numericUpDown2.TabIndex = 81;
-            this.numericUpDown2.Tag = "";
-            this.numericUpDown2.ThousandsSeparator = true;
+            this.nudVenta.Name = "nudVenta";
+            this.nudVenta.Size = new System.Drawing.Size(107, 26);
+            this.nudVenta.TabIndex = 81;
+            this.nudVenta.Tag = "";
+            this.nudVenta.ThousandsSeparator = true;
             // 
             // label10
             // 
@@ -420,21 +420,21 @@
             this.label10.TabIndex = 84;
             this.label10.Text = "Stock";
             // 
-            // numericUpDown3
+            // nudStock
             // 
-            this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.numericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numericUpDown3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.numericUpDown3.Location = new System.Drawing.Point(15, 237);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
+            this.nudStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
+            this.nudStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nudStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.nudStock.Location = new System.Drawing.Point(15, 237);
+            this.nudStock.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(109, 26);
-            this.numericUpDown3.TabIndex = 83;
-            this.numericUpDown3.Tag = "";
+            this.nudStock.Name = "nudStock";
+            this.nudStock.Size = new System.Drawing.Size(109, 26);
+            this.nudStock.TabIndex = 83;
+            this.nudStock.Tag = "";
             // 
             // ID
             // 
@@ -506,9 +506,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.datosContainer.ResumeLayout(false);
             this.datosContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,11 +533,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown nudStock;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudVenta;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;

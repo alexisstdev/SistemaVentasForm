@@ -25,9 +25,11 @@ namespace Sistema_de_Ventas
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            lblUser.Text = $"Usuario: {usuarioActual.NombreUsuario} ({usuarioActual.Rol})";
+            
+            string rol = usuarioActual.Rol == 0 ? "Empleado" : "Administrador";
+            lblUser.Text = $"Usuario: {usuarioActual.NombreUsuario} ({rol})";
 
-            if (usuarioActual.Rol == "Empleado")
+            if (usuarioActual.Rol == 0)
             {
                 menuCompras.Visible = false;
             }
@@ -73,6 +75,21 @@ namespace Sistema_de_Ventas
         private void menuUsuarios_Click_1(object sender, EventArgs e)
         {
             AbrirForms((IconMenuItem)sender, new frmUsuarios());
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void container_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

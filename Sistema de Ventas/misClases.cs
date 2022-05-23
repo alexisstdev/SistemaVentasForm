@@ -2,6 +2,14 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Text;
+using System.Net;
+using System.Windows.Forms;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace Sistema_de_Ventas
 {
@@ -82,34 +90,93 @@ namespace Sistema_de_Ventas
     public class Usuario
     {
         public List<Usuario> misUsuarios = new List<Usuario>();
+
         public string Contraseña { get; set; }
         public string Correo { get; set; }
-        public string IDUsuario { get; set; }
+        public int IDUsuario { get; set; }
         public string NombreUsuario { get; set; }
-        public string Rol { get; set; }
+        public int Rol { get; set; }
 
-        public void AñadirUsuario(Usuario miUsuario)
+        public string mensaje { get; set; }
+
+       
+
+        public async Task<string> AñadirUsuario(Usuario miUsuario)
         {
-            misUsuarios.Add(miUsuario);
-            Serializador.Serializar("misUsuarios.dat", misUsuarios);
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(miUsuario.Correo);
+
+
+            if (!match.Success)
+            {
+                MessageBox.Show("Ingrese una direccion de correo valida");
+            }
+            else
+            {
+                var usuario = new Usuario();
+                usuario.Correo = miUsuario.Correo;
+                usuario.Contraseña = miUsuario.Contraseña;
+                usuario.Rol = miUsuario.Rol;
+                usuario.NombreUsuario = miUsuario.NombreUsuario;
+                string posturl = "https://localhost:7268/api/userauth/register";
+
+
+
+                var stringPayload = JsonConvert.SerializeObject(usuario);
+                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+                var httpClient = new HttpClient();
+                var httpResponse = await httpClient.PostAsync(posturl, httpContent);
+                var responseContent = await httpResponse.Content.ReadAsStringAsync();
+                Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
+                MessageBox.Show(responseContent);
+                MessageBox.Show(JsonConvert.SerializeObject(obj.IDUsuario));
+
+                CargarLista();
+                
+            }
+            return "Usuario agregado correctamente";
+
+
         }
 
-        public void EliminarUsuario(int index)
+
+        public async Task<HttpWebResponse> EliminarUsuario(int index)
         {
-            misUsuarios.RemoveAt(index);
-            Serializador.Serializar("misUsuarios.dat", misUsuarios);
+            string sURL = "https://localhost:7268/api/user/" + index.ToString();
+
+            WebRequest request = WebRequest.Create(sURL);
+            request.Method = "DELETE";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            CargarLista();
+            return response;
+
         }
 
-        public void DeserializarLista()
+        public void CargarLista()
         {
-            if (Serializador.Deserializar<List<Usuario>>("misUsuarios.dat") == default) return;
 
-            misUsuarios = Serializador.Deserializar<List<Usuario>>("misUsuarios.dat");
-            Serializador.Serializar("misUsuarios.dat", misUsuarios);
+            string uri = "https://localhost:7268/api/user";
+            string respuesta = "";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                respuesta = reader.ReadToEnd();
+            }
+
+
+
+            misUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(respuesta);
+
+
         }
     }
 
-    public class Venta
+        public class Venta
     {
         public int Cantidad { get; set; }
         public DateTime FechaVenta { get; set; }

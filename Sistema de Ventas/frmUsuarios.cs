@@ -10,6 +10,7 @@ namespace Sistema_de_Ventas
         public frmUsuarios()
         {
             InitializeComponent();
+            
         }
 
         private void ActualizarDataGrid()
@@ -17,7 +18,7 @@ namespace Sistema_de_Ventas
             dtgUsuarios.Rows.Clear();
             foreach (Usuario miUsuario in miUsuario.misUsuarios)
             {
-                dtgUsuarios.Rows.Add(miUsuario.IDUsuario, miUsuario.NombreUsuario, miUsuario.Correo, miUsuario.Rol, miUsuario.Contraseña);
+                dtgUsuarios.Rows.Add(miUsuario.IDUsuario, miUsuario.NombreUsuario, miUsuario.Correo, miUsuario.Rol == 1 ? "Administrador" : "Empleado", miUsuario.Contraseña);
             }
         }
 
@@ -36,7 +37,7 @@ namespace Sistema_de_Ventas
                     break;
 
                 case "ID":
-                    indexBusqueda = miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.Contains(txtBusqueda.Text));
+                    indexBusqueda = miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.ToString().Contains(txtBusqueda.Text));
                     break;
 
                 case "Correo":
@@ -55,14 +56,14 @@ namespace Sistema_de_Ventas
             dtgUsuarios.Rows[indexBusqueda].Selected = true;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private async void btnEliminar_Click(object sender, EventArgs e)
         {
-            miUsuario.EliminarUsuario(dtgUsuarios.CurrentCell.RowIndex);
+            await miUsuario.EliminarUsuario(miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario);
             ActualizarDataGrid();
             LimpiarDatos();
         }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        
+        private async void btnGuardar_Click(object sender, EventArgs e)
         {
             foreach (Control control in datosContainer.Controls)
             {
@@ -77,24 +78,27 @@ namespace Sistema_de_Ventas
                 MessageBox.Show("Por favor verifique las contraseñas");
                 return;
             }
-            if (miUsuario.misUsuarios.FindIndex(x => x.IDUsuario == txtID.Text) != -1)
+            if (miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.ToString() == txtID.Text) != -1)
             {
                 var messageBox = MessageBox.Show($"Ya existe un usuario con el ID: {txtID.Text} ¿Desea sobreescribirlo?", "",
                                  MessageBoxButtons.YesNo,
                                  MessageBoxIcon.Question);
 
                 if (messageBox == DialogResult.No) return;
-                else miUsuario.EliminarUsuario(miUsuario.misUsuarios.FindIndex(x => x.IDUsuario == txtID.Text));
+                else miUsuario.EliminarUsuario(miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.ToString() == txtID.Text));
             }
+
+            
+
             var usuario = new Usuario
             {
-                IDUsuario = txtID.Text,
+                IDUsuario = int.Parse(txtID.Text),
                 NombreUsuario = txtNombre.Text,
                 Correo = txtCorreo.Text,
                 Contraseña = txtContraseña.Text,
-                Rol = cbxRol.Text
+                Rol = cbxRol.SelectedIndex
             };
-            miUsuario.AñadirUsuario(usuario);
+            await miUsuario.AñadirUsuario(usuario);
             ActualizarDataGrid();
             LimpiarDatos();
         }
@@ -108,14 +112,14 @@ namespace Sistema_de_Ventas
         {
             lblIndex.Text = $"{dtgUsuarios.CurrentCell.RowIndex}";
 
-            miUsuario.DeserializarLista();
+            miUsuario.CargarLista();
 
             if (dtgUsuarios.CurrentCell.RowIndex >= 0 && dtgUsuarios.CurrentCell.RowIndex < miUsuario.misUsuarios.Count)
             {
-                txtID.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario;
+                txtID.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario.ToString();
                 txtNombre.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario;
                 txtCorreo.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Correo;
-                cbxRol.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Rol;
+                cbxRol.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].ToString();
                 txtContraseña.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Contraseña;
                 txtConfirmarContraseña.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Contraseña;
             }
@@ -123,7 +127,7 @@ namespace Sistema_de_Ventas
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            miUsuario.DeserializarLista();
+            miUsuario.CargarLista();
             ActualizarDataGrid();
         }
 
@@ -133,6 +137,21 @@ namespace Sistema_de_Ventas
             {
                 if (control is TextBox) control.Text = "";
             }
+        }
+
+        private void cbxRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }

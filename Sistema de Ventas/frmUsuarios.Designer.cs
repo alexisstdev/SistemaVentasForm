@@ -71,7 +71,7 @@
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderSize = 2;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -92,7 +92,7 @@
             this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLimpiar.FlatAppearance.BorderSize = 2;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(189)))), ((int)(((byte)(129)))));
             this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnLimpiar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(189)))), ((int)(((byte)(129)))));
@@ -114,7 +114,7 @@
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(47)))), ((int)(((byte)(88)))));
             this.btnEliminar.FlatAppearance.BorderSize = 2;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(47)))), ((int)(((byte)(88)))));
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnEliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(47)))), ((int)(((byte)(88)))));
@@ -132,13 +132,13 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label7.ForeColor = System.Drawing.Color.Gray;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label7.Location = new System.Drawing.Point(32, 11);
             this.label7.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 25);
+            this.label7.Size = new System.Drawing.Size(181, 26);
             this.label7.TabIndex = 86;
             this.label7.Text = "Datos del usuario";
             // 
@@ -155,7 +155,7 @@
             this.dtgUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -170,7 +170,7 @@
             this.Contraseña});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -182,7 +182,7 @@
             this.dtgUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -190,14 +190,14 @@
             this.dtgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
             this.dtgUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dtgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgUsuarios.ShowCellErrors = false;
             this.dtgUsuarios.ShowCellToolTips = false;
             this.dtgUsuarios.ShowEditingIcon = false;
             this.dtgUsuarios.ShowRowErrors = false;
-            this.dtgUsuarios.Size = new System.Drawing.Size(912, 548);
+            this.dtgUsuarios.Size = new System.Drawing.Size(766, 499);
             this.dtgUsuarios.TabIndex = 87;
+            this.dtgUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgUsuarios_CellContentClick);
             this.dtgUsuarios.SelectionChanged += new System.EventHandler(this.dtgUsuarios_SelectionChanged);
             // 
             // ID
@@ -207,7 +207,7 @@
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ID.Width = 35;
+            this.ID.Width = 33;
             // 
             // Nombre
             // 
@@ -216,7 +216,7 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Nombre.Width = 90;
+            this.Nombre.Width = 85;
             // 
             // Correo
             // 
@@ -225,7 +225,7 @@
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
             this.Correo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Correo.Width = 79;
+            this.Correo.Width = 74;
             // 
             // Rol
             // 
@@ -234,7 +234,7 @@
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
             this.Rol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Rol.Width = 43;
+            this.Rol.Width = 44;
             // 
             // Contraseña
             // 
@@ -242,31 +242,31 @@
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.ReadOnly = true;
             this.Contraseña.Visible = false;
-            this.Contraseña.Width = 144;
+            this.Contraseña.Width = 131;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label8.ForeColor = System.Drawing.Color.Gray;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label8.Location = new System.Drawing.Point(343, 17);
             this.label8.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 25);
+            this.label8.Size = new System.Drawing.Size(176, 26);
             this.label8.TabIndex = 88;
             this.label8.Text = "Lista de usuarios";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(648, 20);
+            this.label9.Location = new System.Drawing.Point(537, 19);
             this.label9.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(112, 22);
+            this.label9.Size = new System.Drawing.Size(106, 24);
             this.label9.TabIndex = 90;
             this.label9.Text = "Buscar por:";
             // 
@@ -280,20 +280,20 @@
             "ID",
             "Nombre",
             "Correo"});
-            this.cbxBuscar.Location = new System.Drawing.Point(765, 11);
+            this.cbxBuscar.Location = new System.Drawing.Point(646, 15);
             this.cbxBuscar.Name = "cbxBuscar";
-            this.cbxBuscar.Size = new System.Drawing.Size(148, 30);
+            this.cbxBuscar.Size = new System.Drawing.Size(148, 32);
             this.cbxBuscar.TabIndex = 91;
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBusqueda.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtBusqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtBusqueda.Location = new System.Drawing.Point(919, 14);
+            this.txtBusqueda.Location = new System.Drawing.Point(800, 21);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(280, 23);
+            this.txtBusqueda.Size = new System.Drawing.Size(241, 22);
             this.txtBusqueda.TabIndex = 92;
             // 
             // btnBuscar
@@ -302,13 +302,13 @@
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.FlatAppearance.BorderSize = 2;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Gray;
             this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.btnBuscar.IconColor = System.Drawing.Color.Gray;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnBuscar.IconSize = 30;
-            this.btnBuscar.Location = new System.Drawing.Point(1205, 9);
+            this.btnBuscar.Location = new System.Drawing.Point(1059, 15);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(55, 33);
             this.btnBuscar.TabIndex = 93;
@@ -323,12 +323,13 @@
             this.cbxRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxRol.FormattingEnabled = true;
             this.cbxRol.Items.AddRange(new object[] {
-            "Administrador",
-            "Empleado"});
+            "Empleado",
+            "Administrador"});
             this.cbxRol.Location = new System.Drawing.Point(15, 351);
             this.cbxRol.Name = "cbxRol";
-            this.cbxRol.Size = new System.Drawing.Size(266, 30);
+            this.cbxRol.Size = new System.Drawing.Size(266, 32);
             this.cbxRol.TabIndex = 82;
+            this.cbxRol.SelectedIndexChanged += new System.EventHandler(this.cbxRol_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -338,7 +339,7 @@
             this.label6.Location = new System.Drawing.Point(11, 326);
             this.label6.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 22);
+            this.label6.Size = new System.Drawing.Size(38, 24);
             this.label6.TabIndex = 81;
             this.label6.Text = "Rol";
             // 
@@ -346,12 +347,12 @@
             // 
             this.txtConfirmarContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtConfirmarContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtConfirmarContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtConfirmarContraseña.Location = new System.Drawing.Point(15, 292);
             this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
             this.txtConfirmarContraseña.PasswordChar = '*';
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(266, 23);
+            this.txtConfirmarContraseña.Size = new System.Drawing.Size(266, 22);
             this.txtConfirmarContraseña.TabIndex = 80;
             // 
             // label5
@@ -362,7 +363,7 @@
             this.label5.Location = new System.Drawing.Point(11, 261);
             this.label5.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(211, 22);
+            this.label5.Size = new System.Drawing.Size(189, 24);
             this.label5.TabIndex = 79;
             this.label5.Text = "Confirmar contraseña";
             // 
@@ -370,12 +371,12 @@
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContraseña.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtContraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtContraseña.Location = new System.Drawing.Point(15, 229);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(266, 23);
+            this.txtContraseña.Size = new System.Drawing.Size(266, 22);
             this.txtContraseña.TabIndex = 78;
             // 
             // label2
@@ -386,7 +387,7 @@
             this.label2.Location = new System.Drawing.Point(11, 198);
             this.label2.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 22);
+            this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 77;
             this.label2.Text = "Contraseña";
             // 
@@ -394,11 +395,11 @@
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtCorreo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtCorreo.Location = new System.Drawing.Point(15, 166);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(266, 23);
+            this.txtCorreo.Size = new System.Drawing.Size(266, 22);
             this.txtCorreo.TabIndex = 76;
             // 
             // label3
@@ -409,7 +410,7 @@
             this.label3.Location = new System.Drawing.Point(11, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 22);
+            this.label3.Size = new System.Drawing.Size(68, 24);
             this.label3.TabIndex = 75;
             this.label3.Text = "Correo";
             // 
@@ -417,11 +418,11 @@
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtNombre.Location = new System.Drawing.Point(15, 103);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(266, 23);
+            this.txtNombre.Size = new System.Drawing.Size(266, 22);
             this.txtNombre.TabIndex = 74;
             // 
             // label1
@@ -432,7 +433,7 @@
             this.label1.Location = new System.Drawing.Point(11, 72);
             this.label1.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 22);
+            this.label1.Size = new System.Drawing.Size(79, 24);
             this.label1.TabIndex = 73;
             this.label1.Text = "Nombre";
             // 
@@ -444,7 +445,7 @@
             this.label4.Location = new System.Drawing.Point(11, 9);
             this.label4.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 22);
+            this.label4.Size = new System.Drawing.Size(27, 24);
             this.label4.TabIndex = 71;
             this.label4.Text = "ID";
             // 
@@ -452,11 +453,11 @@
             // 
             this.txtID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtID.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.txtID.Location = new System.Drawing.Point(15, 40);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(266, 23);
+            this.txtID.Size = new System.Drawing.Size(266, 22);
             this.txtID.TabIndex = 72;
             // 
             // datosContainer
@@ -481,22 +482,22 @@
             // lblIndex
             // 
             this.lblIndex.AutoSize = true;
-            this.lblIndex.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.lblIndex.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.lblIndex.ForeColor = System.Drawing.Color.Gray;
             this.lblIndex.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblIndex.Location = new System.Drawing.Point(286, 9);
             this.lblIndex.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.lblIndex.Name = "lblIndex";
-            this.lblIndex.Size = new System.Drawing.Size(31, 25);
+            this.lblIndex.Size = new System.Drawing.Size(31, 26);
             this.lblIndex.TabIndex = 95;
             this.lblIndex.Text = "-1";
             // 
             // frmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1311, 665);
+            this.ClientSize = new System.Drawing.Size(1137, 622);
             this.Controls.Add(this.lblIndex);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBusqueda);
@@ -509,7 +510,7 @@
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.datosContainer);
-            this.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmUsuarios";
             this.Text = "frmUsuarios";

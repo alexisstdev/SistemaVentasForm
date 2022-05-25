@@ -170,6 +170,7 @@ namespace Sistema_de_Ventas
             else
             {
                 var usuario = new Usuario();
+                usuario.IDUsuario = miUsuario.IDUsuario;
                 usuario.Correo = miUsuario.Correo;
                 usuario.Contraseña = miUsuario.Contraseña;
                 usuario.Rol = miUsuario.Rol;
@@ -184,8 +185,7 @@ namespace Sistema_de_Ventas
                 var httpResponse = await httpClient.PostAsync(posturl, httpContent);
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
                 Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
-                MessageBox.Show(responseContent);
-                MessageBox.Show(JsonConvert.SerializeObject(obj.IDUsuario));
+                
 
                 CargarLista();
                 

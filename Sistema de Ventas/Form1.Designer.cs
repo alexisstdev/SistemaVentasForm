@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.Titulo = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuVentas = new FontAwesome.Sharp.IconMenuItem();
             this.menuClientes = new FontAwesome.Sharp.IconMenuItem();
@@ -53,17 +52,6 @@
             this.Titulo.Size = new System.Drawing.Size(1126, 57);
             this.Titulo.TabIndex = 1;
             this.Titulo.Text = "menuStrip2";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 35F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.label1.Location = new System.Drawing.Point(909, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 57);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "P N G   L O G O";
             // 
             // menuStrip1
             // 
@@ -187,9 +175,9 @@
             // container
             // 
             this.container.AutoSize = true;
-            this.container.Location = new System.Drawing.Point(218, 70);
+            this.container.Location = new System.Drawing.Point(221, 0);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1290, 679);
+            this.container.Size = new System.Drawing.Size(1290, 711);
             this.container.TabIndex = 71;
             this.container.Paint += new System.Windows.Forms.PaintEventHandler(this.container_Paint);
             // 
@@ -202,7 +190,6 @@
             this.Controls.Add(this.lblUser);
             this.Controls.Add(this.container);
             this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.Titulo);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
@@ -223,7 +210,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip Titulo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private FontAwesome.Sharp.IconMenuItem menuVentas;
         private FontAwesome.Sharp.IconMenuItem menuCompras;

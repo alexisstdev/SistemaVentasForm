@@ -29,7 +29,7 @@ namespace Sistema_de_Ventas
 
         private async void btnIniciarSesión_Click(object sender, EventArgs e)
         {
-            string url = "https://localhost:7268/api/userauth/login";
+            string url = "http://apiventas.somee.com/api/userauth/login";
             var user = new AuthRequest();
             user.Email = txtNombre.Text;
             user.Password = txtContraseña.Text;

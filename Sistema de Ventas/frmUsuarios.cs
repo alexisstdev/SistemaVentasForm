@@ -110,6 +110,10 @@ namespace Sistema_de_Ventas
 
         private void dtgUsuarios_SelectionChanged(object sender, EventArgs e)
         {
+
+
+            
+
             lblIndex.Text = $"{dtgUsuarios.CurrentCell.RowIndex}";
 
             miUsuario.CargarLista();

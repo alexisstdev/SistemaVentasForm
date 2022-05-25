@@ -16,6 +16,8 @@ namespace Sistema_de_Ventas
         private static Usuario usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form formularioActivo = null;
+        Producto miProducto = new Producto();
+        
 
         public Inicio(Usuario miUsuario)
         {
@@ -69,7 +71,7 @@ namespace Sistema_de_Ventas
 
         private void menuProductos_Click(object sender, EventArgs e)
         {
-            AbrirForms((IconMenuItem)sender, new frmProductos());
+            AbrirForms((IconMenuItem)sender, new frmProductos(miProducto));
         }
 
         private void menuUsuarios_Click_1(object sender, EventArgs e)

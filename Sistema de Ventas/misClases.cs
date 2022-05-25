@@ -10,6 +10,7 @@ using System.Net;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Drawing;
 
 namespace Sistema_de_Ventas
 {
@@ -23,35 +24,90 @@ namespace Sistema_de_Ventas
         public double TotalCompra { get; set; }
     }
 
+    
+
     [Serializable]
     public class Producto
     {
         public List<Producto> misProductos = new List<Producto>();
 
-        public string IDProducto { get; set; }
-        public string NombreProducto { get; set; }
-        public double PrecioCompra { get; set; }
-        public double PrecioVenta { get; set; }
-        public int StockProducto { get; set; }
+        public int idproducto { get; set; }
+        public string nombreProducto { get; set; }
+        public decimal? precioCompra { get; set; }
+        public decimal? precioVenta { get; set; }
+        public int? stockProducto { get; set; }
+        public string imagenProducto { get; set; }
 
-        public void AñadirProducto(Producto miProducto)
+        public string NombreImagen { get; set; }
+
+        public async Task<string> AñadirProducto(Producto miProducto)
         {
-            misProductos.Add(miProducto);
-            Serializador.Serializar("misProductos.dat", misProductos);
+            var oProducto = new Producto();
+            oProducto.idproducto = miProducto.idproducto;
+            oProducto.nombreProducto = miProducto.nombreProducto;
+            oProducto.precioCompra = miProducto.precioCompra;
+            oProducto.precioVenta = miProducto.precioVenta;
+            oProducto.stockProducto = miProducto.stockProducto;
+            oProducto.imagenProducto = miProducto.imagenProducto;
+            oProducto.NombreImagen = miProducto.NombreImagen;
+            string posturl = "http://apiventas.somee.com/api/product";
+
+
+
+            var stringPayload = JsonConvert.SerializeObject(oProducto);
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+            var httpClient = new HttpClient();
+            var httpResponse = await httpClient.PostAsync(posturl, httpContent);
+            var responseContent = await httpResponse.Content.ReadAsStringAsync();
+            Producto obj = JsonConvert.DeserializeObject<Producto>(responseContent);
+            
+            
+
+            CargarProductos();
+            return "Producto agregado";
+        }
+        public async Task<Stream> GetImageFromUrl(string url)
+        {
+            var httpClient = new HttpClient();
+            var stream = await httpClient.GetStreamAsync(url);
+            return stream;
         }
 
-        public void EliminarProducto(int index)
+        public async Task<HttpWebResponse> EliminarProducto(int index)
         {
-            misProductos.RemoveAt(index);
-            Serializador.Serializar("misProductos.dat", misProductos);
+            string sURL = "http://apiventas.somee.com/api/product/" + index.ToString();
+
+            WebRequest request = WebRequest.Create(sURL);
+            request.Method = "DELETE";
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            CargarProductos();
+            return response;
+
         }
 
-        public void DeserializarLista()
+        public async Task<string> CargarProductos()
         {
-            if (Serializador.Deserializar<List<Producto>>("misProductos.dat") == default) return;
+            string uri = "http://apiventas.somee.com/api/product/";
+            string respuesta = "";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
-            misProductos = Serializador.Deserializar<List<Producto>>("misProductos.dat");
-            Serializador.Serializar("misProductos.dat", misProductos);
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                respuesta = reader.ReadToEnd();
+            }
+
+            
+
+
+
+
+            misProductos = JsonConvert.DeserializeObject<List<Producto>>(respuesta);
+
+            return "Lista cargada";
         }
     }
 
@@ -118,7 +174,7 @@ namespace Sistema_de_Ventas
                 usuario.Contraseña = miUsuario.Contraseña;
                 usuario.Rol = miUsuario.Rol;
                 usuario.NombreUsuario = miUsuario.NombreUsuario;
-                string posturl = "https://localhost:7268/api/userauth/register";
+                string posturl = "http://apiventas.somee.com/api/userauth/register";
 
 
 
@@ -142,7 +198,7 @@ namespace Sistema_de_Ventas
 
         public async Task<HttpWebResponse> EliminarUsuario(int index)
         {
-            string sURL = "https://localhost:7268/api/user/" + index.ToString();
+            string sURL = "http://apiventas.somee.com/api/user/" + index.ToString();
 
             WebRequest request = WebRequest.Create(sURL);
             request.Method = "DELETE";
@@ -156,7 +212,7 @@ namespace Sistema_de_Ventas
         public void CargarLista()
         {
 
-            string uri = "https://localhost:7268/api/user";
+            string uri = "http://apiventas.somee.com/api/user";
             string respuesta = "";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;

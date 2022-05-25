@@ -16,7 +16,6 @@ namespace Sistema_de_Ventas
 {
     public partial class Login : Form
     {
-        
         public Login()
         {
             InitializeComponent();
@@ -37,7 +36,6 @@ namespace Sistema_de_Ventas
             Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
             Match match = regex.Match(user.Email);
 
-
             if (!match.Success)
             {
                 MessageBox.Show("Ingrese una direccion de correo valida");
@@ -51,8 +49,6 @@ namespace Sistema_de_Ventas
                 var responseContent = await httpResponse.Content.ReadAsStringAsync();
                 Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
 
-
-
                 if (obj.mensaje == "Sesion iniciada correctamente" && obj.mensaje != "ninguna sesion activa")
                 {
                     Inicio form = new Inicio(obj);
@@ -65,8 +61,6 @@ namespace Sistema_de_Ventas
                     MessageBox.Show("Datos incorrectos");
                 }
             }
-
-            
         }
 
         private void frmClosing(object sender, FormClosingEventArgs e)
@@ -78,7 +72,6 @@ namespace Sistema_de_Ventas
 
         private void Login_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

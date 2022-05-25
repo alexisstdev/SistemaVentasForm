@@ -69,7 +69,7 @@ namespace Sistema_de_Ventas
 
         private void menuUsuarios_Click_1(object sender, EventArgs e)
         {
-            AbrirForms((IconMenuItem)sender, new frmUsuarios());
+            AbrirForms((IconMenuItem)sender, new frmUsuarios(usuarioActual));
         }
 
         private void menuAñadirCompra_Click(object sender, EventArgs e)

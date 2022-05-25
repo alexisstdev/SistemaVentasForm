@@ -7,9 +7,10 @@ namespace Sistema_de_Ventas
     {
         private Usuario miUsuario = new Usuario();
 
-        public frmUsuarios()
+        public frmUsuarios(Usuario UsuarioActual)
         {
             InitializeComponent();
+            miUsuario = UsuarioActual;
         }
 
         private void ActualizarDataGrid()

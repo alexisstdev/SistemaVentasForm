@@ -10,7 +10,6 @@ namespace Sistema_de_Ventas
         public frmUsuarios()
         {
             InitializeComponent();
-            
         }
 
         private void ActualizarDataGrid()
@@ -62,7 +61,7 @@ namespace Sistema_de_Ventas
             ActualizarDataGrid();
             LimpiarDatos();
         }
-        
+
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             foreach (Control control in datosContainer.Controls)
@@ -88,8 +87,6 @@ namespace Sistema_de_Ventas
                 else miUsuario.EliminarUsuario(miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.ToString() == txtID.Text));
             }
 
-            
-
             var usuario = new Usuario
             {
                 IDUsuario = int.Parse(txtID.Text),
@@ -110,10 +107,6 @@ namespace Sistema_de_Ventas
 
         private void dtgUsuarios_SelectionChanged(object sender, EventArgs e)
         {
-
-
-            
-
             lblIndex.Text = $"{dtgUsuarios.CurrentCell.RowIndex}";
 
             miUsuario.CargarLista();
@@ -123,7 +116,7 @@ namespace Sistema_de_Ventas
                 txtID.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario.ToString();
                 txtNombre.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario;
                 txtCorreo.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Correo;
-                cbxRol.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].ToString();
+                cbxRol.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Rol.ToString();
                 txtContraseña.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Contraseña;
                 txtConfirmarContraseña.Text = miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].Contraseña;
             }
@@ -145,17 +138,14 @@ namespace Sistema_de_Ventas
 
         private void cbxRol_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-
         }
     }
 }

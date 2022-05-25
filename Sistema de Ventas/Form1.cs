@@ -16,8 +16,7 @@ namespace Sistema_de_Ventas
         private static Usuario usuarioActual;
         private static IconMenuItem MenuActivo = null;
         private static Form formularioActivo = null;
-        Producto miProducto = new Producto();
-        
+        private Producto miProducto = new Producto();
 
         public Inicio(Usuario miUsuario)
         {
@@ -27,7 +26,6 @@ namespace Sistema_de_Ventas
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            
             string rol = usuarioActual.Rol == 0 ? "Empleado" : "Administrador";
             lblUser.Text = $"Usuario: {usuarioActual.NombreUsuario} ({rol})";
 
@@ -59,11 +57,6 @@ namespace Sistema_de_Ventas
             AbrirForms((IconMenuItem)sender, new frmVentas());
         }
 
-        private void menuCompras_Click(object sender, EventArgs e)
-        {
-            AbrirForms((IconMenuItem)sender, new frmCompras());
-        }
-
         private void menuClientes_Click(object sender, EventArgs e)
         {
             AbrirForms((IconMenuItem)sender, new frmClientes());
@@ -79,19 +72,14 @@ namespace Sistema_de_Ventas
             AbrirForms((IconMenuItem)sender, new frmUsuarios());
         }
 
-        private void iconPictureBox1_Click(object sender, EventArgs e)
+        private void menuAñadirCompra_Click(object sender, EventArgs e)
         {
-
+            AbrirForms((IconMenuItem)sender, new frmCompras());
         }
 
-        private void container_Paint(object sender, PaintEventArgs e)
+        private void menuVerCompras_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void lblUser_Click(object sender, EventArgs e)
-        {
-
+            AbrirForms((IconMenuItem)sender, new frmDetallesCompras());
         }
     }
 }

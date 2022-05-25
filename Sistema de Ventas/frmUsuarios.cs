@@ -57,6 +57,21 @@ namespace Sistema_de_Ventas
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == "AdminUser")
+            {
+                MessageBox.Show("Accion no permitida");
+                return;
+            }
+            else if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == miUsuario.NombreUsuario)
+            {
+                MessageBox.Show("No puedes borrar tu propio usuario");
+                return;
+            }
+            else if (miUsuario.Rol == 0)
+            {
+                MessageBox.Show("No tienes los permisos para ejecutar esa accion");
+                return;
+            }
             await miUsuario.EliminarUsuario(miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario);
             ActualizarDataGrid();
             LimpiarDatos();

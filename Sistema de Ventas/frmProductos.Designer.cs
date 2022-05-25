@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblIndex = new System.Windows.Forms.Label();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -43,11 +43,6 @@
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.datosContainer = new System.Windows.Forms.Panel();
-            this.lblImg = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
-            this.pct_Imagen = new System.Windows.Forms.PictureBox();
-            this.btnSelectImg = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.nudStock = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,6 +53,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblImg = new System.Windows.Forms.Label();
+            this.pct_Imagen = new System.Windows.Forms.PictureBox();
+            this.btnSelectImg = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.dtgProductos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,12 +63,11 @@
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Provedoor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datosContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Imagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,6 +102,7 @@
             this.btnBuscar.TabIndex = 117;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click_1);
             // 
             // txtBusqueda
             // 
@@ -237,8 +235,6 @@
             // 
             // datosContainer
             // 
-            this.datosContainer.Controls.Add(this.label2);
-            this.datosContainer.Controls.Add(this.txtProveedor);
             this.datosContainer.Controls.Add(this.label10);
             this.datosContainer.Controls.Add(this.nudStock);
             this.datosContainer.Controls.Add(this.label6);
@@ -251,72 +247,15 @@
             this.datosContainer.Controls.Add(this.txtNombre);
             this.datosContainer.Location = new System.Drawing.Point(22, 47);
             this.datosContainer.Name = "datosContainer";
-            this.datosContainer.Size = new System.Drawing.Size(294, 272);
+            this.datosContainer.Size = new System.Drawing.Size(294, 224);
             this.datosContainer.TabIndex = 118;
-            // 
-            // lblImg
-            // 
-            this.lblImg.Font = new System.Drawing.Font("Century Gothic", 8F);
-            this.lblImg.ForeColor = System.Drawing.Color.Gray;
-            this.lblImg.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblImg.Location = new System.Drawing.Point(163, 497);
-            this.lblImg.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.lblImg.Name = "lblImg";
-            this.lblImg.Size = new System.Drawing.Size(139, 20);
-            this.lblImg.TabIndex = 123;
-            this.lblImg.Text = "Imagen seleccionada";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(11, 108);
-            this.label2.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 22);
-            this.label2.TabIndex = 121;
-            this.label2.Text = "Proveedor";
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
-            this.txtProveedor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtProveedor.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.txtProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.txtProveedor.Location = new System.Drawing.Point(15, 133);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(266, 23);
-            this.txtProveedor.TabIndex = 122;
-            // 
-            // pct_Imagen
-            // 
-            this.pct_Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pct_Imagen.Location = new System.Drawing.Point(35, 325);
-            this.pct_Imagen.Name = "pct_Imagen";
-            this.pct_Imagen.Size = new System.Drawing.Size(267, 158);
-            this.pct_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pct_Imagen.TabIndex = 120;
-            this.pct_Imagen.TabStop = false;
-            this.pct_Imagen.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btnSelectImg
-            // 
-            this.btnSelectImg.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.btnSelectImg.Location = new System.Drawing.Point(39, 489);
-            this.btnSelectImg.Name = "btnSelectImg";
-            this.btnSelectImg.Size = new System.Drawing.Size(122, 32);
-            this.btnSelectImg.TabIndex = 85;
-            this.btnSelectImg.Text = "Subir imagen";
-            this.btnSelectImg.UseVisualStyleBackColor = true;
-            this.btnSelectImg.Click += new System.EventHandler(this.btnSelectImg_Click);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(12, 213);
+            this.label10.Location = new System.Drawing.Point(13, 165);
             this.label10.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(60, 22);
@@ -328,7 +267,7 @@
             this.nudStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.nudStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudStock.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.nudStock.Location = new System.Drawing.Point(14, 238);
+            this.nudStock.Location = new System.Drawing.Point(15, 190);
             this.nudStock.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -344,7 +283,7 @@
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(169, 159);
+            this.label6.Location = new System.Drawing.Point(170, 111);
             this.label6.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 22);
@@ -357,7 +296,7 @@
             this.nudVenta.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudVenta.DecimalPlaces = 2;
             this.nudVenta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.nudVenta.Location = new System.Drawing.Point(173, 184);
+            this.nudVenta.Location = new System.Drawing.Point(174, 136);
             this.nudVenta.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -374,7 +313,7 @@
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Gray;
             this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(11, 159);
+            this.label5.Location = new System.Drawing.Point(12, 111);
             this.label5.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 22);
@@ -387,7 +326,7 @@
             this.nudCompra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nudCompra.DecimalPlaces = 2;
             this.nudCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.nudCompra.Location = new System.Drawing.Point(15, 184);
+            this.nudCompra.Location = new System.Drawing.Point(16, 136);
             this.nudCompra.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -445,6 +384,41 @@
             this.txtNombre.Size = new System.Drawing.Size(266, 23);
             this.txtNombre.TabIndex = 74;
             // 
+            // lblImg
+            // 
+            this.lblImg.Font = new System.Drawing.Font("Century Gothic", 8F);
+            this.lblImg.ForeColor = System.Drawing.Color.Gray;
+            this.lblImg.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblImg.Location = new System.Drawing.Point(163, 497);
+            this.lblImg.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.lblImg.Name = "lblImg";
+            this.lblImg.Size = new System.Drawing.Size(139, 20);
+            this.lblImg.TabIndex = 123;
+            this.lblImg.Text = "Imagen seleccionada";
+            // 
+            // pct_Imagen
+            // 
+            this.pct_Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pct_Imagen.InitialImage = null;
+            this.pct_Imagen.Location = new System.Drawing.Point(35, 277);
+            this.pct_Imagen.Name = "pct_Imagen";
+            this.pct_Imagen.Size = new System.Drawing.Size(267, 206);
+            this.pct_Imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pct_Imagen.TabIndex = 120;
+            this.pct_Imagen.TabStop = false;
+            this.pct_Imagen.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnSelectImg
+            // 
+            this.btnSelectImg.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.btnSelectImg.Location = new System.Drawing.Point(39, 489);
+            this.btnSelectImg.Name = "btnSelectImg";
+            this.btnSelectImg.Size = new System.Drawing.Size(122, 32);
+            this.btnSelectImg.TabIndex = 85;
+            this.btnSelectImg.Text = "Subir imagen";
+            this.btnSelectImg.UseVisualStyleBackColor = true;
+            this.btnSelectImg.Click += new System.EventHandler(this.btnSelectImg_Click);
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -460,44 +434,43 @@
             this.dtgProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgProductos.BackgroundColor = System.Drawing.Color.White;
             this.dtgProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 14F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
             this.Stock,
             this.PrecioCompra,
-            this.PrecioVenta,
-            this.Provedoor});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 14F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgProductos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.PrecioVenta});
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgProductos.DefaultCellStyle = dataGridViewCellStyle26;
             this.dtgProductos.Location = new System.Drawing.Point(347, 55);
             this.dtgProductos.MultiSelect = false;
             this.dtgProductos.Name = "dtgProductos";
             this.dtgProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 14F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dtgProductos.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Century Gothic", 14F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(5);
+            this.dtgProductos.RowsDefaultCellStyle = dataGridViewCellStyle28;
             this.dtgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgProductos.ShowCellErrors = false;
             this.dtgProductos.ShowCellToolTips = false;
@@ -552,14 +525,6 @@
             this.PrecioVenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.PrecioVenta.Width = 148;
             // 
-            // Provedoor
-            // 
-            this.Provedoor.HeaderText = "Proveedor";
-            this.Provedoor.Name = "Provedoor";
-            this.Provedoor.ReadOnly = true;
-            this.Provedoor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Provedoor.Width = 113;
-            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
@@ -587,10 +552,10 @@
             this.Text = "frmProductos";
             this.datosContainer.ResumeLayout(false);
             this.datosContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Imagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -624,14 +589,11 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pct_Imagen;
         private System.Windows.Forms.DataGridView dtgProductos;
+        private System.Windows.Forms.Label lblImg;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Provedoor;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtProveedor;
-        private System.Windows.Forms.Label lblImg;
     }
 }

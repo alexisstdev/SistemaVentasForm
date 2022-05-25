@@ -61,7 +61,8 @@ namespace Sistema_de_Ventas
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            miCliente.EliminarCliente(dtgClientes.CurrentCell.RowIndex);
+            miCliente.misClientes.RemoveAt(dtgClientes.CurrentCell.RowIndex);
+            miCliente.SerializarLista();
             ActualizarDataGrid();
             LimpiarDatos();
         }
@@ -84,7 +85,7 @@ namespace Sistema_de_Ventas
                                  MessageBoxIcon.Question);
 
                 if (messageBox == DialogResult.No) return;
-                else miCliente.EliminarCliente(miCliente.misClientes.FindIndex(x => x.IDCliente == txtID.Text));
+                else miCliente.misClientes.RemoveAt(miCliente.misClientes.FindIndex(x => x.IDCliente == txtID.Text));
             }
             var cliente = new Cliente
             {
@@ -94,7 +95,8 @@ namespace Sistema_de_Ventas
                 Telefono = txtTeléfono.Text
             };
 
-            miCliente.AñadirCliente(cliente);
+            miCliente.misClientes.Add(cliente);
+            miCliente.SerializarLista();
             ActualizarDataGrid();
             LimpiarDatos();
         }

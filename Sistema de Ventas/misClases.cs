@@ -22,14 +22,16 @@ namespace Sistema_de_Ventas
 
             using (Stream stream = File.Open(carpeta + nombreArchivo, FileMode.Create))
             {
-                StreamWriter sw = new StreamWriter(stream);
-                try
+                using (StreamWriter sw = new StreamWriter(stream))
                 {
-                    sw.Write(JsonConvert.SerializeObject(miObjeto));
-                }
-                catch (Exception)
-                {
-                    throw;
+                    try
+                    {
+                        sw.WriteLine(JsonConvert.SerializeObject(miObjeto));
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
                 }
             }
         }
@@ -37,18 +39,22 @@ namespace Sistema_de_Ventas
         public static T Deserializar<T>(string nombreArchivo)
         {
             Directory.CreateDirectory(carpeta);
-
+            string json;
             T objeto;
             using (Stream stream = File.Open(carpeta + nombreArchivo, FileMode.OpenOrCreate))
             {
-                if (stream.Length == 0) return default;
-                try
+                using (StreamReader sr = new StreamReader(stream))
                 {
-                    objeto = JsonConvert.DeserializeObject<T>(stream.ToString());
-                }
-                catch (Exception)
-                {
-                    throw;
+                    json = sr.ReadToEnd();
+                    if (stream.Length == 0) return default;
+                    try
+                    {
+                        objeto = JsonConvert.DeserializeObject<T>(json);
+                    }
+                    catch (Exception)
+                    {
+                        throw;
+                    }
                 }
             }
             return objeto;
@@ -58,6 +64,7 @@ namespace Sistema_de_Ventas
     [Serializable]
     public class Cliente
     {
+        [NonSerialized]
         public List<Cliente> misClientes = new List<Cliente>();
 
         public string Correo { get; set; }
@@ -65,24 +72,15 @@ namespace Sistema_de_Ventas
         public string NombreCliente { get; set; }
         public string Telefono { get; set; }
 
-        public void AñadirCliente(Cliente miCliente)
+        public void SerializarLista()
         {
-            misClientes.Add(miCliente);
-            Serializador.Serializar("misClientes.dat", misClientes);
+            Serializador.Serializar("misClientes.json", misClientes);
         }
 
         public void DeserializarLista()
         {
-            if (Serializador.Deserializar<List<Cliente>>("misClientes.dat") == default) return;
-
-            misClientes = Serializador.Deserializar<List<Cliente>>("misClientes.dat");
-            Serializador.Serializar("misClientes.dat", misClientes);
-        }
-
-        public void EliminarCliente(int index)
-        {
-            misClientes.RemoveAt(index);
-            Serializador.Serializar("misClientes.dat", misClientes);
+            if (Serializador.Deserializar<List<Cliente>>("misClientes.json") == default) return;
+            misClientes = Serializador.Deserializar<List<Cliente>>("misClientes.json");
         }
     }
 
@@ -197,16 +195,23 @@ namespace Sistema_de_Ventas
             return "Lista cargada";
         }
 
-        public async Task<HttpWebResponse> EliminarProducto(int index)
+        public async Task<string> EliminarProducto(int index)
         {
-            string sURL = "http://apiventas.somee.com/api/product/" + index.ToString();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://apiventas.somee.com");
+                var response = client.DeleteAsync("/api/product/" + index.ToString()).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Producto eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
 
-            WebRequest request = WebRequest.Create(sURL);
-            request.Method = "DELETE";
-
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            CargarProductos();
-            return response;
+            return "Producto eliminado";
         }
 
         public async Task<Stream> GetImageFromUrl(string url)
@@ -260,14 +265,14 @@ namespace Sistema_de_Ventas
             return "Usuario agregado correctamente";
         }
 
-        public void CargarLista()
+        public async Task<string> CargarLista()
         {
-            string url = "http://apiventas.somee.com/api/user";
+            string uri = "http://apiventas.somee.com/api/user";
             string respuesta = "";
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
-            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (System.Net.HttpWebResponse response = (System.Net.HttpWebResponse)request.GetResponse())
             using (Stream stream = response.GetResponseStream())
             using (StreamReader reader = new StreamReader(stream))
             {
@@ -275,18 +280,27 @@ namespace Sistema_de_Ventas
             }
 
             misUsuarios = JsonConvert.DeserializeObject<List<Usuario>>(respuesta);
+
+            return "Lista cargada";
         }
 
-        public async Task<HttpWebResponse> EliminarUsuario(int index)
+        public async Task<string> EliminarUsuario(int index)
         {
-            string sURL = "http://apiventas.somee.com/api/user/" + index.ToString();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://apiventas.somee.com");
+                var response = client.DeleteAsync("/api/user/" + index.ToString()).Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Usuario eliminado");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
 
-            WebRequest request = WebRequest.Create(sURL);
-            request.Method = "DELETE";
-
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            CargarLista();
-            return response;
+            return "Usuario eliminado";
         }
     }
 

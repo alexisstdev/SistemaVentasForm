@@ -16,6 +16,8 @@ namespace Sistema_de_Ventas
 {
     public partial class Login : Form
     {
+        private AuthRequest user = new AuthRequest();
+
         public Login()
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace Sistema_de_Ventas
         private async void btnIniciarSesión_Click(object sender, EventArgs e)
         {
             string url = "http://apiventas.somee.com/api/userauth/login";
-            var user = new AuthRequest();
+
             user.Email = txtNombre.Text;
             user.Password = txtContraseña.Text;
 
@@ -63,15 +65,18 @@ namespace Sistema_de_Ventas
             }
         }
 
-        private void frmClosing(object sender, FormClosingEventArgs e)
+        private async void frmClosing(object sender, FormClosingEventArgs e)
         {
+            string url = "http://apiventas.somee.com/api/userauth/logout";
+            var stringPayload = JsonConvert.SerializeObject(user);
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+            var httpClient = new HttpClient();
+            var httpResponse = await httpClient.PostAsync(url, httpContent);
+            var responseContent = await httpResponse.Content.ReadAsStringAsync();
+            Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
             txtContraseña.Text = "";
             txtNombre.Text = "";
             this.Show();
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
         }
     }
 }

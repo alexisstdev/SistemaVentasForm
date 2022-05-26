@@ -1,0 +1,18 @@
+[
+  {
+    "misProductosCompra": [
+      {
+        "IDProducto": 11,
+        "imagenProducto": null,
+        "NombreImagen": null,
+        "NombreProducto": "P1C1",
+        "PrecioCompra": 61.00,
+        "PrecioVenta": 98.00,
+        "StockProducto": 12
+      }
+    ],
+    "FechaCompra": "2022-05-25T19:05:44.8492593-05:00",
+    "IDCompra": "C1",
+    "TotalCompra": 732.00
+  }
+]

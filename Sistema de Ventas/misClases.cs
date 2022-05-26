@@ -5,7 +5,6 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
-
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +25,7 @@ namespace Sistema_de_Ventas
                 {
                     try
                     {
-                        sw.WriteLine(JsonConvert.SerializeObject(miObjeto));
+                        sw.Write(JsonConvert.SerializeObject(miObjeto, Formatting.Indented));
                     }
                     catch (Exception)
                     {
@@ -87,7 +86,9 @@ namespace Sistema_de_Ventas
     [Serializable]
     public class Compra
     {
+        [NonSerialized]
         public List<Compra> misCompras = new List<Compra>();
+
         public List<Producto> misProductosCompra = new List<Producto>();
 
         public DateTime FechaCompra { get; set; }
@@ -104,26 +105,25 @@ namespace Sistema_de_Ventas
             return TotalCompra;
         }
 
-        public void FinalizarCompra()
+        public async void FinalizarCompra()
         {
-            List<Producto> productosEnMemoria = Serializador.Deserializar<List<Producto>>("misProductos.json");
+            Producto miProducto = new Producto();
+            miProducto.DeserializarLista();
 
-            foreach (Producto miProducto in misProductosCompra)
+            foreach (Producto producto in misProductosCompra)
             {
-                int i = productosEnMemoria.FindIndex(x => x.IDProducto == miProducto.IDProducto);
+                /*int i = miProducto.misProductos.FindIndex(x => x.IDProducto == miProducto.IDProducto);
                 if (i == -1)
                 {
-                    productosEnMemoria.Add(miProducto);
-                }
-                else
-                {
-                    productosEnMemoria[i].StockProducto += miProducto.StockProducto;
-                    productosEnMemoria[i].PrecioCompra = miProducto.PrecioCompra;
-                    productosEnMemoria[i].PrecioVenta = miProducto.PrecioVenta;
-                }
+                await miProducto.AñadirProducto(producto);
+                   }
+                       else
+                       {
+                           miProducto.misProductos[i].StockProducto += miProducto.StockProducto;
+                           miProducto.misProductos[i].PrecioCompra = miProducto.PrecioCompra;
+                           miProducto.misProductos[i].PrecioVenta = miProducto.PrecioVenta;
+                       }*/
             }
-
-            Serializador.Serializar("misProductos.json", productosEnMemoria);
         }
 
         public void SerializarListaCompra()
@@ -141,12 +141,12 @@ namespace Sistema_de_Ventas
     [Serializable]
     public class Producto
     {
+        [NonSerialized]
         public List<Producto> misProductos = new List<Producto>();
 
         public int IDProducto { get; set; }
         public string imagenProducto { get; set; }
         public string NombreImagen { get; set; }
-        public string Proveedor { get; set; } //Se agregó proveedor
         public string NombreProducto { get; set; }
         public decimal PrecioCompra { get; set; }
         public decimal PrecioVenta { get; set; }
@@ -157,7 +157,6 @@ namespace Sistema_de_Ventas
             var oProducto = new Producto();
             oProducto.IDProducto = miProducto.IDProducto;
             oProducto.NombreProducto = miProducto.NombreProducto;
-            //oProducto.Proveedor = miProducto.Proveedor;
             oProducto.PrecioCompra = miProducto.PrecioCompra;
             oProducto.PrecioVenta = miProducto.PrecioVenta;
             oProducto.StockProducto = miProducto.StockProducto;
@@ -173,6 +172,7 @@ namespace Sistema_de_Ventas
             Producto obj = JsonConvert.DeserializeObject<Producto>(responseContent);
 
             CargarProductos();
+            SerializarLista();
             return "Producto agregado";
         }
 
@@ -185,6 +185,7 @@ namespace Sistema_de_Ventas
 
             using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
             using (Stream stream = response.GetResponseStream())
+
             using (StreamReader reader = new StreamReader(stream))
             {
                 respuesta = reader.ReadToEnd();
@@ -192,7 +193,7 @@ namespace Sistema_de_Ventas
 
             misProductos = JsonConvert.DeserializeObject<List<Producto>>(respuesta);
 
-            return "Lista cargada";
+            return "Producto agregado";
         }
 
         public async Task<string> EliminarProducto(int index)
@@ -201,17 +202,24 @@ namespace Sistema_de_Ventas
             {
                 client.BaseAddress = new Uri("http://apiventas.somee.com");
                 var response = client.DeleteAsync("/api/product/" + index.ToString()).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    MessageBox.Show("Producto eliminado");
-                }
-                else
-                {
-                    MessageBox.Show("Error");
-                }
-            }
 
+                if (response.IsSuccessStatusCode) MessageBox.Show("Producto eliminado");
+                else MessageBox.Show("Error");
+            }
+            CargarProductos();
+            SerializarLista();
             return "Producto eliminado";
+        }
+
+        public void SerializarLista()
+        {
+            Serializador.Serializar("misProductos.json", misProductos);
+        }
+
+        public List<Producto> DeserializarLista()
+        {
+            if (Serializador.Deserializar<List<Producto>>("misProductos.json") == default) return misProductos;
+            return misProductos = Serializador.Deserializar<List<Producto>>("misProductos.json");
         }
 
         public async Task<Stream> GetImageFromUrl(string url)

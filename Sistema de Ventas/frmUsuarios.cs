@@ -111,6 +111,7 @@ namespace Sistema_de_Ventas
                 Contraseña = txtContraseña.Text,
                 Rol = cbxRol.SelectedIndex
             };
+
             await miUsuario.AñadirUsuario(usuario);
             ActualizarDataGrid();
             LimpiarDatos();
@@ -150,18 +151,6 @@ namespace Sistema_de_Ventas
             {
                 if (control is TextBox) control.Text = "";
             }
-        }
-
-        private void cbxRol_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void dtgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
         }
     }
 }

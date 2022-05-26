@@ -1,1 +1,14 @@
-[{"Correo":"dari@","IDCliente":"123","NombreCliente":"dari","Telefono":"8712464"}]
+[
+  {
+    "Correo": "dari@gmail.com",
+    "IDCliente": "1",
+    "NombreCliente": "Dari",
+    "Telefono": "68523523"
+  },
+  {
+    "Correo": "pepe@gmail.com",
+    "IDCliente": "2",
+    "NombreCliente": "pepe",
+    "Telefono": "543543643"
+  }
+]

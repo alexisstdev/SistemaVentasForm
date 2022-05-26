@@ -39,12 +39,13 @@
             this.lblDatos = new System.Windows.Forms.Label();
             this.btnDescargarPDF = new FontAwesome.Sharp.IconButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.dtgCompras = new System.Windows.Forms.DataGridView();
+            this.dtgProductosComprados = new System.Windows.Forms.DataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductosComprados)).BeginInit();
             this.SuspendLayout();
             // 
             // cbxID
@@ -57,6 +58,7 @@
             this.cbxID.Name = "cbxID";
             this.cbxID.Size = new System.Drawing.Size(266, 30);
             this.cbxID.TabIndex = 143;
+            this.cbxID.SelectedIndexChanged += new System.EventHandler(this.cbxID_SelectedIndexChanged);
             // 
             // lblMontoTotal
             // 
@@ -148,16 +150,16 @@
             this.label8.TabIndex = 137;
             this.label8.Text = "Lista de productos comprados";
             // 
-            // dtgCompras
+            // dtgProductosComprados
             // 
-            this.dtgCompras.AllowUserToAddRows = false;
-            this.dtgCompras.AllowUserToDeleteRows = false;
-            this.dtgCompras.AllowUserToResizeColumns = false;
-            this.dtgCompras.AllowUserToResizeRows = false;
-            this.dtgCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dtgCompras.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            this.dtgCompras.BackgroundColor = System.Drawing.Color.White;
-            this.dtgCompras.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgProductosComprados.AllowUserToAddRows = false;
+            this.dtgProductosComprados.AllowUserToDeleteRows = false;
+            this.dtgProductosComprados.AllowUserToResizeColumns = false;
+            this.dtgProductosComprados.AllowUserToResizeRows = false;
+            this.dtgProductosComprados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgProductosComprados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dtgProductosComprados.BackgroundColor = System.Drawing.Color.White;
+            this.dtgProductosComprados.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -165,10 +167,11 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCompras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtgCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgProductosComprados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProductosComprados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
+            this.Nombre,
             this.PrecioCompra,
             this.Cantidad,
             this.Subtotal});
@@ -179,11 +182,11 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgCompras.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgCompras.Location = new System.Drawing.Point(27, 222);
-            this.dtgCompras.MultiSelect = false;
-            this.dtgCompras.Name = "dtgCompras";
-            this.dtgCompras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dtgProductosComprados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dtgProductosComprados.Location = new System.Drawing.Point(27, 222);
+            this.dtgProductosComprados.MultiSelect = false;
+            this.dtgProductosComprados.Name = "dtgProductosComprados";
+            this.dtgProductosComprados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -191,26 +194,34 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgCompras.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgProductosComprados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dtgCompras.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dtgCompras.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.dtgCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCompras.ShowCellErrors = false;
-            this.dtgCompras.ShowCellToolTips = false;
-            this.dtgCompras.ShowEditingIcon = false;
-            this.dtgCompras.ShowRowErrors = false;
-            this.dtgCompras.Size = new System.Drawing.Size(687, 320);
-            this.dtgCompras.TabIndex = 136;
+            this.dtgProductosComprados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgProductosComprados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.dtgProductosComprados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProductosComprados.ShowCellErrors = false;
+            this.dtgProductosComprados.ShowCellToolTips = false;
+            this.dtgProductosComprados.ShowEditingIcon = false;
+            this.dtgProductosComprados.ShowRowErrors = false;
+            this.dtgProductosComprados.Size = new System.Drawing.Size(687, 320);
+            this.dtgProductosComprados.TabIndex = 136;
             // 
             // Producto
             // 
             this.Producto.FillWeight = 1.757324F;
-            this.Producto.HeaderText = "Producto";
+            this.Producto.HeaderText = "ID";
             this.Producto.Name = "Producto";
             this.Producto.ReadOnly = true;
             this.Producto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Producto.Width = 88;
+            this.Producto.Width = 33;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Nombre.Width = 79;
             // 
             // PrecioCompra
             // 
@@ -250,12 +261,13 @@
             this.Controls.Add(this.lblDatos);
             this.Controls.Add(this.btnDescargarPDF);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dtgCompras);
+            this.Controls.Add(this.dtgProductosComprados);
             this.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmDetallesCompras";
             this.Text = "frmDetallesCompras";
-            ((System.ComponentModel.ISupportInitialize)(this.dtgCompras)).EndInit();
+            this.Load += new System.EventHandler(this.frmDetallesCompras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductosComprados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,8 +282,9 @@
         private System.Windows.Forms.Label lblDatos;
         private FontAwesome.Sharp.IconButton btnDescargarPDF;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dtgCompras;
+        private System.Windows.Forms.DataGridView dtgProductosComprados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;

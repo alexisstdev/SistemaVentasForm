@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Sistema_de_Ventas
 {
@@ -19,7 +21,7 @@ namespace Sistema_de_Ventas
             dtgProductosCompra.Rows.Clear();
             foreach (Producto miProductoCompra in miCompra.misProductosCompra)
             {
-                dtgProductosCompra.Rows.Add(miProductoCompra.IDProducto, miProductoCompra.NombreProducto, miProductoCompra.Proveedor, miProductoCompra.PrecioCompra, miProductoCompra.StockProducto, miProductoCompra.PrecioCompra * miProductoCompra.StockProducto);
+                dtgProductosCompra.Rows.Add(miProductoCompra.IDProducto, miProductoCompra.NombreProducto, miProductoCompra.PrecioCompra, miProductoCompra.StockProducto, miProductoCompra.PrecioCompra * miProductoCompra.StockProducto);
             }
         }
 
@@ -29,6 +31,11 @@ namespace Sistema_de_Ventas
             {
                 cbxID.Items.Add(producto.IDProducto);
             }
+        }
+
+        public static Image resizeImage(Image imgToResize, Size size)
+        {
+            return new Bitmap(imgToResize, size);
         }
 
         private void btnFinalizarCompra_Click_1(object sender, EventArgs e)
@@ -44,14 +51,14 @@ namespace Sistema_de_Ventas
                 FechaCompra = DateTime.Now,
                 IDCompra = txtIDCompra.Text,
                 TotalCompra = miCompra.TotalCompra,
-                misProductosCompra = miCompra.misProductosCompra,
+                misProductosCompra = miCompra.misProductosCompra
             };
+
             miCompra.misCompras.Add(compra);
             miCompra.SerializarListaCompra();
 
             miCompra.FinalizarCompra();
             MessageBox.Show("Los productos se han agregado al inventario");
-
             ActualizarDataGrid();
 
             LimpiarDatos();
@@ -73,9 +80,8 @@ namespace Sistema_de_Ventas
                 IDProducto = int.Parse(cbxID.Text),
                 NombreProducto = txtNombre.Text,
                 StockProducto = (int)nudCantidad.Value,
-                Proveedor = txtProveedor.Text,
-                PrecioCompra = (decimal)nudPrecioCompra.Value,
-                PrecioVenta = (decimal)nudPrecioVenta.Value,
+                PrecioCompra = nudPrecioCompra.Value,
+                PrecioVenta = nudPrecioVenta.Value,
             };
 
             foreach (Producto miProducto in miProducto.misProductos)
@@ -111,7 +117,6 @@ namespace Sistema_de_Ventas
                 txtNombre.Text = miCompra.misProductosCompra[dtgProductosCompra.CurrentCell.RowIndex].NombreProducto;
                 nudPrecioCompra.Value = (decimal)miCompra.misProductosCompra[dtgProductosCompra.CurrentCell.RowIndex].PrecioCompra;
                 nudPrecioVenta.Value = (decimal)miCompra.misProductosCompra[dtgProductosCompra.CurrentCell.RowIndex].PrecioVenta;
-                txtProveedor.Text = miCompra.misProductosCompra[dtgProductosCompra.CurrentCell.RowIndex].Proveedor;
             }
         }
 
@@ -129,6 +134,7 @@ namespace Sistema_de_Ventas
 
         private void frmCompras_Load_1(object sender, EventArgs e)
         {
+            miProducto.DeserializarLista();
             foreach (Producto producto in miProducto.misProductos)
             {
                 cbxID.Items.Add(producto.IDProducto);
@@ -141,7 +147,14 @@ namespace Sistema_de_Ventas
             txtNombre.Text = miProducto.misProductos[cbxID.SelectedIndex].NombreProducto;
             nudPrecioCompra.Value = (decimal)miProducto.misProductos[cbxID.SelectedIndex].PrecioCompra;
             nudPrecioVenta.Value = (decimal)miProducto.misProductos[cbxID.SelectedIndex].PrecioVenta;
-            txtProveedor.Text = miProducto.misProductos[cbxID.SelectedIndex].Proveedor;
+        }
+
+        private void btnSelectImg_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                lblImg.Text = openFileDialog1.FileName;
+            }
         }
     }
 }

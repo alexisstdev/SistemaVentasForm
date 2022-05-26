@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbxID = new System.Windows.Forms.ComboBox();
             this.lblMontoTotal = new System.Windows.Forms.Label();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
@@ -53,23 +53,23 @@
             this.cbxID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(237)))), ((int)(((byte)(239)))));
             this.cbxID.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbxID.FormattingEnabled = true;
-            this.cbxID.ItemHeight = 22;
-            this.cbxID.Location = new System.Drawing.Point(170, 16);
+            this.cbxID.ItemHeight = 21;
+            this.cbxID.Location = new System.Drawing.Point(155, 15);
             this.cbxID.Name = "cbxID";
-            this.cbxID.Size = new System.Drawing.Size(266, 30);
+            this.cbxID.Size = new System.Drawing.Size(242, 29);
             this.cbxID.TabIndex = 143;
             this.cbxID.SelectedIndexChanged += new System.EventHandler(this.cbxID_SelectedIndexChanged);
             // 
             // lblMontoTotal
             // 
             this.lblMontoTotal.AutoSize = true;
-            this.lblMontoTotal.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.lblMontoTotal.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblMontoTotal.ForeColor = System.Drawing.Color.Gray;
             this.lblMontoTotal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblMontoTotal.Location = new System.Drawing.Point(740, 421);
-            this.lblMontoTotal.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.lblMontoTotal.Location = new System.Drawing.Point(673, 402);
+            this.lblMontoTotal.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.lblMontoTotal.Name = "lblMontoTotal";
-            this.lblMontoTotal.Size = new System.Drawing.Size(145, 44);
+            this.lblMontoTotal.Size = new System.Drawing.Size(126, 42);
             this.lblMontoTotal.TabIndex = 142;
             this.lblMontoTotal.Text = "Total pagado :\r\n$2000";
             // 
@@ -85,9 +85,9 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Gray;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnBuscar.IconSize = 25;
-            this.btnBuscar.Location = new System.Drawing.Point(455, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(414, 15);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 30);
+            this.btnBuscar.Size = new System.Drawing.Size(59, 29);
             this.btnBuscar.TabIndex = 141;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -95,25 +95,25 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label9.Location = new System.Drawing.Point(19, 19);
-            this.label9.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.label9.Location = new System.Drawing.Point(17, 18);
+            this.label9.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 22);
+            this.label9.Size = new System.Drawing.Size(122, 21);
             this.label9.TabIndex = 140;
             this.label9.Text = "ID de compra:";
             // 
             // lblDatos
             // 
-            this.lblDatos.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.lblDatos.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.lblDatos.ForeColor = System.Drawing.Color.Gray;
             this.lblDatos.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblDatos.Location = new System.Drawing.Point(19, 86);
-            this.lblDatos.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.lblDatos.Location = new System.Drawing.Point(17, 82);
+            this.lblDatos.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.lblDatos.Name = "lblDatos";
-            this.lblDatos.Size = new System.Drawing.Size(292, 78);
+            this.lblDatos.Size = new System.Drawing.Size(265, 74);
             this.lblDatos.TabIndex = 139;
             this.lblDatos.Text = "Datos de la compra\r\n\r\n\r\n";
             // 
@@ -129,9 +129,9 @@
             this.btnDescargarPDF.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnDescargarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDescargarPDF.IconSize = 40;
-            this.btnDescargarPDF.Location = new System.Drawing.Point(744, 494);
+            this.btnDescargarPDF.Location = new System.Drawing.Point(676, 472);
             this.btnDescargarPDF.Name = "btnDescargarPDF";
-            this.btnDescargarPDF.Size = new System.Drawing.Size(266, 48);
+            this.btnDescargarPDF.Size = new System.Drawing.Size(242, 46);
             this.btnDescargarPDF.TabIndex = 138;
             this.btnDescargarPDF.Text = "Descargar PDF";
             this.btnDescargarPDF.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -140,13 +140,13 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.label8.ForeColor = System.Drawing.Color.Gray;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(23, 194);
-            this.label8.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
+            this.label8.Location = new System.Drawing.Point(21, 185);
+            this.label8.Margin = new System.Windows.Forms.Padding(21, 0, 21, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(288, 22);
+            this.label8.Size = new System.Drawing.Size(246, 21);
             this.label8.TabIndex = 137;
             this.label8.Text = "Lista de productos comprados";
             // 
@@ -160,14 +160,14 @@
             this.dtgProductosComprados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dtgProductosComprados.BackgroundColor = System.Drawing.Color.White;
             this.dtgProductosComprados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgProductosComprados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgProductosComprados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dtgProductosComprados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgProductosComprados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
@@ -175,35 +175,35 @@
             this.PrecioCompra,
             this.Cantidad,
             this.Subtotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgProductosComprados.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgProductosComprados.Location = new System.Drawing.Point(27, 222);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgProductosComprados.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgProductosComprados.Location = new System.Drawing.Point(25, 212);
             this.dtgProductosComprados.MultiSelect = false;
             this.dtgProductosComprados.Name = "dtgProductosComprados";
             this.dtgProductosComprados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgProductosComprados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(5);
-            this.dtgProductosComprados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgProductosComprados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            this.dtgProductosComprados.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dtgProductosComprados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dtgProductosComprados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgProductosComprados.ShowCellErrors = false;
             this.dtgProductosComprados.ShowCellToolTips = false;
             this.dtgProductosComprados.ShowEditingIcon = false;
             this.dtgProductosComprados.ShowRowErrors = false;
-            this.dtgProductosComprados.Size = new System.Drawing.Size(687, 320);
+            this.dtgProductosComprados.Size = new System.Drawing.Size(625, 305);
             this.dtgProductosComprados.TabIndex = 136;
             // 
             // Producto
@@ -250,10 +250,10 @@
             // 
             // frmDetallesCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1057, 558);
+            this.ClientSize = new System.Drawing.Size(968, 544);
             this.Controls.Add(this.cbxID);
             this.Controls.Add(this.lblMontoTotal);
             this.Controls.Add(this.btnBuscar);
@@ -262,10 +262,10 @@
             this.Controls.Add(this.btnDescargarPDF);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dtgProductosComprados);
-            this.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "frmDetallesCompras";
-            this.Text = "frmDetallesCompras";
+            this.Text = "DetallesCompras";
             this.Load += new System.EventHandler(this.frmDetallesCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductosComprados)).EndInit();
             this.ResumeLayout(false);

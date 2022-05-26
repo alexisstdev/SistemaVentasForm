@@ -149,12 +149,9 @@ namespace Sistema_de_Ventas
             nudPrecioVenta.Value = (decimal)miProducto.misProductos[cbxID.SelectedIndex].PrecioVenta;
         }
 
-        private void btnSelectImg_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                lblImg.Text = openFileDialog1.FileName;
-            }
+            LimpiarDatos();
         }
     }
 }

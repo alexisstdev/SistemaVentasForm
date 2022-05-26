@@ -28,195 +28,279 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Titulo = new System.Windows.Forms.MenuStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.menuVentas = new FontAwesome.Sharp.IconMenuItem();
-            this.menuClientes = new FontAwesome.Sharp.IconMenuItem();
+            this.menuProductos = new FontAwesome.Sharp.IconMenuItem();
             this.menuCompras = new FontAwesome.Sharp.IconMenuItem();
             this.menuAñadirCompra = new FontAwesome.Sharp.IconMenuItem();
             this.menuVerCompras = new FontAwesome.Sharp.IconMenuItem();
+            this.menuVentas = new FontAwesome.Sharp.IconMenuItem();
+            this.menuClientes = new FontAwesome.Sharp.IconMenuItem();
             this.menuUsuarios = new FontAwesome.Sharp.IconMenuItem();
-            this.menuProductos = new FontAwesome.Sharp.IconMenuItem();
-            this.lblUser = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel = new System.Windows.Forms.Panel();
             this.container = new System.Windows.Forms.Panel();
+            this.container1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel.SuspendLayout();
+            this.container.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Titulo
-            // 
-            this.Titulo.AutoSize = false;
-            this.Titulo.BackColor = System.Drawing.Color.White;
-            this.Titulo.Location = new System.Drawing.Point(218, 0);
-            this.Titulo.Name = "Titulo";
-            this.Titulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Titulo.Size = new System.Drawing.Size(1126, 53);
-            this.Titulo.TabIndex = 1;
-            this.Titulo.Text = "menuStrip2";
             // 
             // menuStrip1
             // 
             this.menuStrip1.AutoSize = false;
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuProductos,
+            this.menuCompras,
             this.menuVentas,
             this.menuClientes,
-            this.menuCompras,
-            this.menuUsuarios,
-            this.menuProductos});
+            this.menuUsuarios});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(218, 748);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(180, 558);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // menuVentas
+            // menuProductos
             // 
-            this.menuVentas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuVentas.IconChar = FontAwesome.Sharp.IconChar.Tags;
-            this.menuVentas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.menuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuVentas.Name = "menuVentas";
-            this.menuVentas.Size = new System.Drawing.Size(211, 52);
-            this.menuVentas.Text = "Ventas";
-            this.menuVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.menuVentas.Click += new System.EventHandler(this.menuVentas_Click);
-            // 
-            // menuClientes
-            // 
-            this.menuClientes.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuClientes.IconChar = FontAwesome.Sharp.IconChar.Users;
-            this.menuClientes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.menuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuClientes.Name = "menuClientes";
-            this.menuClientes.Size = new System.Drawing.Size(211, 52);
-            this.menuClientes.Text = "Clientes";
-            this.menuClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.menuClientes.Click += new System.EventHandler(this.menuClientes_Click);
+            this.menuProductos.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuProductos.IconChar = FontAwesome.Sharp.IconChar.Boxes;
+            this.menuProductos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuProductos.IconSize = 30;
+            this.menuProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuProductos.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.menuProductos.Name = "menuProductos";
+            this.menuProductos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuProductos.Size = new System.Drawing.Size(155, 34);
+            this.menuProductos.Text = "Productos";
+            this.menuProductos.Click += new System.EventHandler(this.menuProductos_Click);
             // 
             // menuCompras
             // 
             this.menuCompras.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuAñadirCompra,
             this.menuVerCompras});
-            this.menuCompras.Font = new System.Drawing.Font("Century Gothic", 14F);
-            this.menuCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuCompras.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuCompras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
             this.menuCompras.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
-            this.menuCompras.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            this.menuCompras.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
             this.menuCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuCompras.IconSize = 30;
+            this.menuCompras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuCompras.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuCompras.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
             this.menuCompras.Name = "menuCompras";
-            this.menuCompras.Size = new System.Drawing.Size(211, 52);
+            this.menuCompras.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuCompras.Size = new System.Drawing.Size(155, 34);
             this.menuCompras.Text = "Compras";
-            this.menuCompras.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             // 
             // menuAñadirCompra
             // 
+            this.menuAñadirCompra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuAñadirCompra.IconChar = FontAwesome.Sharp.IconChar.None;
             this.menuAñadirCompra.IconColor = System.Drawing.Color.Black;
             this.menuAñadirCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuAñadirCompra.Name = "menuAñadirCompra";
-            this.menuAñadirCompra.Size = new System.Drawing.Size(218, 26);
+            this.menuAñadirCompra.Size = new System.Drawing.Size(200, 26);
             this.menuAñadirCompra.Text = "AñadirCompra";
             this.menuAñadirCompra.Click += new System.EventHandler(this.menuAñadirCompra_Click);
             // 
             // menuVerCompras
             // 
+            this.menuVerCompras.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuVerCompras.IconChar = FontAwesome.Sharp.IconChar.None;
             this.menuVerCompras.IconColor = System.Drawing.Color.Black;
             this.menuVerCompras.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.menuVerCompras.Name = "menuVerCompras";
-            this.menuVerCompras.Size = new System.Drawing.Size(218, 26);
+            this.menuVerCompras.Size = new System.Drawing.Size(200, 26);
             this.menuVerCompras.Text = "Ver compras";
             this.menuVerCompras.Click += new System.EventHandler(this.menuVerCompras_Click);
             // 
+            // menuVentas
+            // 
+            this.menuVentas.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuVentas.IconChar = FontAwesome.Sharp.IconChar.Tags;
+            this.menuVentas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuVentas.IconSize = 30;
+            this.menuVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuVentas.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.menuVentas.Name = "menuVentas";
+            this.menuVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuVentas.Size = new System.Drawing.Size(155, 34);
+            this.menuVentas.Text = "Ventas";
+            this.menuVentas.Click += new System.EventHandler(this.menuVentas_Click_1);
+            // 
+            // menuClientes
+            // 
+            this.menuClientes.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuClientes.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.menuClientes.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
+            this.menuClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.menuClientes.IconSize = 30;
+            this.menuClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.menuClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuClientes.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
+            this.menuClientes.Name = "menuClientes";
+            this.menuClientes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuClientes.Size = new System.Drawing.Size(155, 34);
+            this.menuClientes.Text = "Clientes";
+            this.menuClientes.Click += new System.EventHandler(this.menuClientes_Click);
+            // 
             // menuUsuarios
             // 
-            this.menuUsuarios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuUsuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
             this.menuUsuarios.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.menuUsuarios.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            this.menuUsuarios.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(167)))), ((int)(((byte)(173)))), ((int)(((byte)(209)))));
             this.menuUsuarios.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.menuUsuarios.IconSize = 30;
+            this.menuUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuUsuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.menuUsuarios.Margin = new System.Windows.Forms.Padding(20, 20, 0, 0);
             this.menuUsuarios.Name = "menuUsuarios";
-            this.menuUsuarios.Size = new System.Drawing.Size(211, 52);
+            this.menuUsuarios.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuUsuarios.Size = new System.Drawing.Size(155, 34);
             this.menuUsuarios.Text = "Usuarios";
-            this.menuUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.menuUsuarios.Click += new System.EventHandler(this.menuUsuarios_Click_1);
-            // 
-            // menuProductos
-            // 
-            this.menuProductos.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuProductos.IconChar = FontAwesome.Sharp.IconChar.Boxes;
-            this.menuProductos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.menuProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.menuProductos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.menuProductos.Name = "menuProductos";
-            this.menuProductos.Size = new System.Drawing.Size(211, 52);
-            this.menuProductos.Text = "Productos";
-            this.menuProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.menuProductos.Click += new System.EventHandler(this.menuProductos_Click);
-            // 
-            // lblUser
-            // 
-            this.lblUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.lblUser.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUser.ForeColor = System.Drawing.Color.Gray;
-            this.lblUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblUser.Location = new System.Drawing.Point(7, 520);
-            this.lblUser.Margin = new System.Windows.Forms.Padding(23, 0, 23, 0);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(211, 61);
-            this.lblUser.TabIndex = 69;
-            this.lblUser.Text = "Admin";
-            this.lblUser.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.iconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(116)))), ((int)(((byte)(131)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 60;
-            this.iconPictureBox1.Location = new System.Drawing.Point(86, 463);
+            this.iconPictureBox1.IconSize = 40;
+            this.iconPictureBox1.Location = new System.Drawing.Point(1040, 17);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.iconPictureBox1.Size = new System.Drawing.Size(40, 40);
             this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.iconPictureBox1.TabIndex = 70;
             this.iconPictureBox1.TabStop = false;
             // 
+            // panel
+            // 
+            this.panel.AutoSize = true;
+            this.panel.Controls.Add(this.container);
+            this.panel.Controls.Add(this.panel2);
+            this.panel.Controls.Add(this.panel1);
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel.Location = new System.Drawing.Point(0, 0);
+            this.panel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(1290, 627);
+            this.panel.TabIndex = 71;
+            // 
             // container
             // 
-            this.container.AutoSize = true;
-            this.container.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.container.Location = new System.Drawing.Point(221, 0);
+            this.container.Controls.Add(this.container1);
+            this.container.Controls.Add(this.panel4);
+            this.container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container.Location = new System.Drawing.Point(185, 69);
+            this.container.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.container.Name = "container";
-            this.container.Size = new System.Drawing.Size(1123, 748);
-            this.container.TabIndex = 71;
+            this.container.Size = new System.Drawing.Size(1105, 558);
+            this.container.TabIndex = 2;
+            // 
+            // container1
+            // 
+            this.container1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container1.Location = new System.Drawing.Point(0, 27);
+            this.container1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.container1.Name = "container1";
+            this.container1.Size = new System.Drawing.Size(1105, 531);
+            this.container1.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1105, 27);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.menuStrip1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 69);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(185, 558);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(87)))), ((int)(((byte)(170)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.iconPictureBox1);
+            this.panel1.Controls.Add(this.lblUser);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1290, 69);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(21, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(201, 35);
+            this.label1.TabIndex = 71;
+            this.label1.Text = "DressyAvenue";
+            // 
+            // lblUser
+            // 
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblUser.BackColor = System.Drawing.Color.Transparent;
+            this.lblUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblUser.Location = new System.Drawing.Point(1102, 9);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(19, 0, 19, 0);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(186, 50);
+            this.lblUser.TabIndex = 69;
+            this.lblUser.Text = "Usuario Default";
+            this.lblUser.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1344, 748);
-            this.Controls.Add(this.lblUser);
-            this.Controls.Add(this.container);
-            this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.Titulo);
-            this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ClientSize = new System.Drawing.Size(1290, 627);
+            this.Controls.Add(this.panel);
+            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(822, 479);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio";
@@ -224,25 +308,34 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel.ResumeLayout(false);
+            this.container.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip Titulo;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private FontAwesome.Sharp.IconMenuItem menuVentas;
         private FontAwesome.Sharp.IconMenuItem menuClientes;
         private FontAwesome.Sharp.IconMenuItem menuProductos;
-        private System.Windows.Forms.Label lblUser;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private System.Windows.Forms.Panel container;
+        private System.Windows.Forms.Panel panel;
         private FontAwesome.Sharp.IconMenuItem menuUsuarios;
         private FontAwesome.Sharp.IconMenuItem menuCompras;
         private FontAwesome.Sharp.IconMenuItem menuAñadirCompra;
         private FontAwesome.Sharp.IconMenuItem menuVerCompras;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.Panel container;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel container1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

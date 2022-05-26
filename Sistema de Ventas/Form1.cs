@@ -13,9 +13,9 @@ namespace Sistema_de_Ventas
 {
     public partial class Inicio : Form
     {
-        private static Usuario usuarioActual;
-        private static IconMenuItem MenuActivo = null;
-        private static Form formularioActivo = null;
+        private Usuario usuarioActual;
+        private IconMenuItem MenuActivo = null;
+        private Form formularioActivo = null;
         private Producto miProducto = new Producto();
 
         public Inicio(Usuario miUsuario)
@@ -26,35 +26,36 @@ namespace Sistema_de_Ventas
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            string rol = usuarioActual.Rol == 0 ? "Empleado" : "Administrador";
-            lblUser.Text = $"Usuario: {usuarioActual.NombreUsuario} ({rol})";
+            lblUser.Text = $"{usuarioActual.NombreUsuario}";
 
             if (usuarioActual.Rol == 0)
             {
                 menuCompras.Visible = false;
+                menuUsuarios.Visible = false;
             }
+            menuProductos.PerformClick();
         }
 
         private void AbrirForms(IconMenuItem menu, Form formulario)
         {
-            if (MenuActivo != null) MenuActivo.BackColor = Color.FromArgb(239, 247, 249);
-
-            menu.BackColor = Color.FromArgb(155, 196, 203);
+            if (MenuActivo != null)
+            {
+                MenuActivo.ForeColor = Color.FromArgb(167, 173, 209);
+                MenuActivo.IconColor = Color.FromArgb(167, 173, 209);
+            }
+            menu.ForeColor = Color.FromArgb(79, 87, 170);
+            menu.IconColor = Color.FromArgb(79, 87, 170);
             MenuActivo = menu;
 
             if (formularioActivo != null) formularioActivo.Close();
             formularioActivo = formulario;
             formulario.TopLevel = false;
+
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
 
-            container.Controls.Add(formulario);
+            container1.Controls.Add(formulario);
             formulario.Show();
-        }
-
-        private void menuVentas_Click(object sender, EventArgs e)
-        {
-            AbrirForms((IconMenuItem)sender, new frmVentas());
         }
 
         private void menuClientes_Click(object sender, EventArgs e)
@@ -80,6 +81,11 @@ namespace Sistema_de_Ventas
         private void menuVerCompras_Click(object sender, EventArgs e)
         {
             AbrirForms((IconMenuItem)sender, new frmDetallesCompras());
+        }
+
+        private void menuVentas_Click_1(object sender, EventArgs e)
+        {
+            AbrirForms((IconMenuItem)sender, new frmVentas());
         }
     }
 }

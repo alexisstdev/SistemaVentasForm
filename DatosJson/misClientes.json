@@ -10,5 +10,11 @@
     "IDCliente": "2",
     "NombreCliente": "pepe",
     "Telefono": "543543643"
+  },
+  {
+    "Correo": "rodsri@gmail.com",
+    "IDCliente": "3",
+    "NombreCliente": "rodrigo",
+    "Telefono": "635654"
   }
 ]

@@ -1,19 +1,8 @@
 [
   {
-    "IDProducto": 1,
-    "imagenProducto": "https://localhost:7268/api/product/img/1",
-    "NombreImagen": null,
-    "Proveedor": null,
-    "NombreProducto": "Zapatos",
-    "PrecioCompra": 23.00,
-    "PrecioVenta": 52.00,
-    "StockProducto": 5
-  },
-  {
     "IDProducto": 2,
     "imagenProducto": "https://localhost:7268/api/product/img/2",
     "NombreImagen": null,
-    "Proveedor": null,
     "NombreProducto": "Vestido amarillo",
     "PrecioCompra": 24.00,
     "PrecioVenta": 28.00,
@@ -23,7 +12,6 @@
     "IDProducto": 3,
     "imagenProducto": "https://localhost:7268/api/product/img/3",
     "NombreImagen": null,
-    "Proveedor": null,
     "NombreProducto": "Camisa Azul",
     "PrecioCompra": 61.00,
     "PrecioVenta": 98.00,
@@ -33,40 +21,36 @@
     "IDProducto": 4,
     "imagenProducto": "https://localhost:7268/api/product/img/4",
     "NombreImagen": null,
-    "Proveedor": null,
     "NombreProducto": "Sudadera negra",
     "PrecioCompra": 18.00,
     "PrecioVenta": 24.00,
     "StockProducto": 18
   },
   {
-    "IDProducto": 5,
-    "imagenProducto": "https://localhost:7268/api/product/img/5",
-    "NombreImagen": null,
-    "Proveedor": null,
-    "NombreProducto": "Vestido ",
-    "PrecioCompra": 30.00,
-    "PrecioVenta": 39.00,
-    "StockProducto": 12
-  },
-  {
     "IDProducto": 6,
     "imagenProducto": "https://localhost:7268/api/product/img/6",
     "NombreImagen": null,
-    "Proveedor": null,
     "NombreProducto": "Prueba Img 6.67Mb",
     "PrecioCompra": 14.00,
     "PrecioVenta": 18.00,
     "StockProducto": 8
   },
   {
-    "IDProducto": 7,
-    "imagenProducto": "https://localhost:7268/api/product/img/7",
+    "IDProducto": 8,
+    "imagenProducto": "https://localhost:7268/api/product/img/8",
     "NombreImagen": null,
-    "Proveedor": null,
     "NombreProducto": "Prodcuto123",
-    "PrecioCompra": 16.00,
-    "PrecioVenta": 18.00,
-    "StockProducto": 8
+    "PrecioCompra": 19.00,
+    "PrecioVenta": 24.00,
+    "StockProducto": 11
+  },
+  {
+    "IDProducto": 9,
+    "imagenProducto": "https://localhost:7268/api/product/img/9",
+    "NombreImagen": null,
+    "NombreProducto": "sudadera",
+    "PrecioCompra": 22.00,
+    "PrecioVenta": 33.00,
+    "StockProducto": 5
   }
 ]

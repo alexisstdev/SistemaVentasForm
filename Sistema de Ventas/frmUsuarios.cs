@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Sistema_de_Ventas
 {
@@ -56,29 +57,7 @@ namespace Sistema_de_Ventas
             dtgUsuarios.Rows[indexBusqueda].Selected = true;
         }
 
-        private async void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == "AdminUser")
-            {
-                MessageBox.Show("Accion no permitida");
-                return;
-            }
-            else if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == miUsuario.NombreUsuario)
-            {
-                MessageBox.Show("No puedes borrar tu propio usuario");
-                return;
-            }
-            else if (miUsuario.Rol == 0)
-            {
-                MessageBox.Show("No tienes los permisos para ejecutar esa accion");
-                return;
-            }
-            await miUsuario.EliminarUsuario(miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario);
-            ActualizarDataGrid();
-            LimpiarDatos();
-        }
-
-        private async void btnGuardar_Click(object sender, EventArgs e)
+        private async void btnGuardar_Click_1(object sender, EventArgs e)
         {
             foreach (Control control in datosContainer.Controls)
             {
@@ -88,6 +67,15 @@ namespace Sistema_de_Ventas
                     return;
                 }
             }
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(txtCorreo.Text);
+
+            if (!match.Success)
+            {
+                MessageBox.Show("Ingrese una direccion de correo valida");
+                return;
+            }
+
             if (txtContraseña.Text != txtConfirmarContraseña.Text)
             {
                 MessageBox.Show("Por favor verifique las contraseñas");
@@ -122,10 +110,8 @@ namespace Sistema_de_Ventas
             LimpiarDatos();
         }
 
-        private void dtgUsuarios_SelectionChanged(object sender, EventArgs e)
+        private void dtgUsuarios_SelectionChanged_1(object sender, EventArgs e)
         {
-            lblIndex.Text = $"{dtgUsuarios.CurrentCell.RowIndex}";
-
             miUsuario.CargarLista();
 
             if (dtgUsuarios.CurrentCell.RowIndex >= 0 && dtgUsuarios.CurrentCell.RowIndex < miUsuario.misUsuarios.Count)
@@ -151,6 +137,67 @@ namespace Sistema_de_Ventas
             {
                 if (control is TextBox) control.Text = "";
             }
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == "AdminUser")
+            {
+                MessageBox.Show("Accion no permitida");
+                return;
+            }
+            else if (miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].NombreUsuario == miUsuario.NombreUsuario)
+            {
+                MessageBox.Show("No puedes borrar tu propio usuario");
+                return;
+            }
+            else if (miUsuario.Rol == 0)
+            {
+                MessageBox.Show("No tienes los permisos para ejecutar esa accion");
+                return;
+            }
+            await miUsuario.EliminarUsuario(miUsuario.misUsuarios[dtgUsuarios.CurrentCell.RowIndex].IDUsuario);
+            ActualizarDataGrid();
+            LimpiarDatos();
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            int indexBusqueda = -1;
+            if (txtBusqueda.Text == "")
+            {
+                MessageBox.Show("Campo de búsqueda vacío");
+                return;
+            }
+            switch (cbxBuscar.Text)
+            {
+                case "Nombre":
+                    indexBusqueda = miUsuario.misUsuarios.FindIndex(x => x.NombreUsuario.Contains(txtBusqueda.Text));
+                    break;
+
+                case "ID":
+                    indexBusqueda = miUsuario.misUsuarios.FindIndex(x => x.IDUsuario.ToString().Contains(txtBusqueda.Text));
+                    break;
+
+                case "Correo":
+                    indexBusqueda = miUsuario.misUsuarios.FindIndex(x => x.Correo.Contains(txtBusqueda.Text));
+                    break;
+
+                default:
+                    MessageBox.Show("Seleccione una opción de búsqueda");
+                    break;
+            }
+            if (indexBusqueda == -1)
+            {
+                MessageBox.Show($"No se encontró un usuario con este {cbxBuscar.Text}");
+                return;
+            }
+            dtgUsuarios.Rows[indexBusqueda].Selected = true;
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            LimpiarDatos();
         }
     }
 }

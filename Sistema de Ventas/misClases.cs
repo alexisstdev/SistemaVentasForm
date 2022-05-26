@@ -244,32 +244,23 @@ namespace Sistema_de_Ventas
 
         public async Task<string> AñadirUsuario(Usuario miUsuario)
         {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(miUsuario.Correo);
+            var usuario = new Usuario();
+            usuario.IDUsuario = miUsuario.IDUsuario;
+            usuario.Correo = miUsuario.Correo;
+            usuario.Contraseña = miUsuario.Contraseña;
+            usuario.Rol = miUsuario.Rol;
+            usuario.NombreUsuario = miUsuario.NombreUsuario;
+            string posturl = "http://apiventas.somee.com/api/userauth/register";
 
-            if (!match.Success)
-            {
-                MessageBox.Show("Ingrese una direccion de correo valida");
-            }
-            else
-            {
-                var usuario = new Usuario();
-                usuario.IDUsuario = miUsuario.IDUsuario;
-                usuario.Correo = miUsuario.Correo;
-                usuario.Contraseña = miUsuario.Contraseña;
-                usuario.Rol = miUsuario.Rol;
-                usuario.NombreUsuario = miUsuario.NombreUsuario;
-                string posturl = "http://apiventas.somee.com/api/userauth/register";
+            var stringPayload = JsonConvert.SerializeObject(usuario);
+            var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
+            var httpClient = new HttpClient();
+            var httpResponse = await httpClient.PostAsync(posturl, httpContent);
+            var responseContent = await httpResponse.Content.ReadAsStringAsync();
+            Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
 
-                var stringPayload = JsonConvert.SerializeObject(usuario);
-                var httpContent = new StringContent(stringPayload, Encoding.UTF8, "application/json");
-                var httpClient = new HttpClient();
-                var httpResponse = await httpClient.PostAsync(posturl, httpContent);
-                var responseContent = await httpResponse.Content.ReadAsStringAsync();
-                Usuario obj = JsonConvert.DeserializeObject<Usuario>(responseContent);
+            CargarLista();
 
-                CargarLista();
-            }
             return "Usuario agregado correctamente";
         }
 

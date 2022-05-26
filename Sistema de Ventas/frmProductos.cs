@@ -25,10 +25,17 @@ namespace Sistema_de_Ventas
 
         private void ActualizarDataGrid()
         {
+            int i = 0;
+            WebClient wc = new WebClient();
+
             dtgProductos.Rows.Clear();
             foreach (Producto miProducto in miProducto.misProductos)
             {
-                dtgProductos.Rows.Add(miProducto.IDProducto, miProducto.NombreProducto, miProducto.StockProducto, miProducto.PrecioCompra, miProducto.PrecioVenta);
+                byte[] bytes = wc.DownloadData("http://apiventas.somee.com/api/product/img/" + miProducto.IDProducto.ToString());
+                MemoryStream ms = new MemoryStream(bytes);
+                Image img = Image.FromStream(ms);
+                dtgProductos.Rows.Add(miProducto.IDProducto, img, miProducto.NombreProducto, miProducto.StockProducto, miProducto.PrecioCompra, miProducto.PrecioVenta);
+                i++;
             }
         }
 
@@ -36,40 +43,6 @@ namespace Sistema_de_Ventas
         {
             await miProducto.CargarProductos();
             ActualizarDataGrid();
-        }
-
-        private void btnBuscar_Click_1(object sender, EventArgs e)
-        {
-            int indexBusqueda = -1;
-            if (txtBusqueda.Text == "")
-            {
-                MessageBox.Show("Campo de búsqueda vacío");
-                return;
-            }
-            switch (cbxBuscar.Text)
-            {
-                case "Nombre":
-                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.NombreProducto.Contains(txtBusqueda.Text));
-                    break;
-
-                case "ID":
-                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.IDProducto.ToString().Contains(txtBusqueda.Text));
-                    break;
-
-                case "stock":
-                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.StockProducto == Int32.Parse(txtBusqueda.Text));
-                    break;
-
-                default:
-                    MessageBox.Show("Seleccione una opción de búsqueda");
-                    break;
-            }
-            if (indexBusqueda == -1)
-            {
-                MessageBox.Show($"No se encontró un producto con este {cbxBuscar.Text}");
-                return;
-            }
-            dtgProductos.Rows[indexBusqueda].Selected = true;
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)
@@ -86,6 +59,48 @@ namespace Sistema_de_Ventas
             LimpiarDatos();
         }
 
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+        }
+
+        private void dtgProductos_SelectionChanged_1(object sender, EventArgs e)
+        {
+            if (dtgProductos.CurrentCell.RowIndex >= 0 && dtgProductos.CurrentCell.RowIndex < miProducto.misProductos.Count)
+            {
+                txtID.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].IDProducto.ToString();
+                txtNombre.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].NombreProducto;
+                nudStock.Value = decimal.Parse(miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].StockProducto.ToString());
+                nudCompra.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioCompra;
+                nudVenta.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioVenta;
+            }
+        }
+
+        private void frmProductos_Load(object sender, EventArgs e)
+        {
+            ActualizarDataGrid();
+
+            LimpiarDatos();
+        }
+
+        private void LimpiarDatos()
+        {
+            foreach (Control control in datosContainer.Controls)
+            {
+                NumericUpDown nud = control as NumericUpDown;
+                if (control is TextBox) control.Text = "";
+                if (control is NumericUpDown) nud.Value = 0;
+            }
+        }
+
+        private void btnSubirImagen_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                lblImg.Text = openFileDialog1.FileName;
+            }
+        }
+
         private async void btnGuardar_Click(object sender, EventArgs e)
         {
             foreach (Control control in datosContainer.Controls)
@@ -100,7 +115,7 @@ namespace Sistema_de_Ventas
             string ruta = lblImg.Text;
             string imgBase64 = "";
             string nombreImg = "";
-            if (lblImg.Text != "Imagen Seleccionada:")
+            if (lblImg.Text != "Imagen seleccionada")
             {
                 using (var ms = new MemoryStream())
                 {
@@ -153,53 +168,38 @@ namespace Sistema_de_Ventas
             LimpiarDatos();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
-            LimpiarDatos();
-        }
-
-        private void btnSelectImg_Click(object sender, EventArgs e)
-        {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            int indexBusqueda = -1;
+            if (txtBusqueda.Text == "")
             {
-                lblImg.Text = openFileDialog1.FileName;
+                MessageBox.Show("Campo de búsqueda vacío");
+                return;
             }
-        }
-
-        private void dtgProductos_SelectionChanged_1(object sender, EventArgs e)
-        {
-            if (dtgProductos.CurrentCell.RowIndex >= 0 && dtgProductos.CurrentCell.RowIndex < miProducto.misProductos.Count)
+            switch (cbxBuscar.Text)
             {
-                WebClient wc = new WebClient();
-                byte[] bytes = wc.DownloadData("http://apiventas.somee.com/api/product/img/" + miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].IDProducto.ToString());
-                MemoryStream ms = new MemoryStream(bytes);
-                Image img = Image.FromStream(ms);
+                case "Nombre":
+                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.NombreProducto.Contains(txtBusqueda.Text));
+                    break;
 
-                lblIndex.Text = $"{dtgProductos.CurrentCell.RowIndex}";
-                pct_Imagen.Image = img;
-                txtID.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].IDProducto.ToString();
-                txtNombre.Text = miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].NombreProducto;
-                nudStock.Value = decimal.Parse(miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].StockProducto.ToString());
-                nudCompra.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioCompra;
-                nudVenta.Value = (decimal)miProducto.misProductos[dtgProductos.CurrentCell.RowIndex].PrecioVenta;
+                case "ID":
+                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.IDProducto.ToString().Contains(txtBusqueda.Text));
+                    break;
+
+                case "stock":
+                    indexBusqueda = miProducto.misProductos.FindIndex(x => x.StockProducto == Int32.Parse(txtBusqueda.Text));
+                    break;
+
+                default:
+                    MessageBox.Show("Seleccione una opción de búsqueda");
+                    break;
             }
-        }
-
-        private void frmProductos_Load(object sender, EventArgs e)
-        {
-            ActualizarDataGrid();
-
-            LimpiarDatos();
-        }
-
-        private void LimpiarDatos()
-        {
-            foreach (Control control in datosContainer.Controls)
+            if (indexBusqueda == -1)
             {
-                NumericUpDown nud = control as NumericUpDown;
-                if (control is TextBox) control.Text = "";
-                if (control is NumericUpDown) nud.Value = 0;
+                MessageBox.Show($"No se encontró un producto con este {cbxBuscar.Text}");
+                return;
             }
+            dtgProductos.Rows[indexBusqueda].Selected = true;
         }
     }
 }

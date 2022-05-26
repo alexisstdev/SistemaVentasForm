@@ -54,7 +54,7 @@
             this.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "frmVentas";
-            this.Text = "frmVentas";
+            this.Text = "Ventas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

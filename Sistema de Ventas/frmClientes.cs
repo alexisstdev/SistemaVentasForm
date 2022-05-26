@@ -21,7 +21,7 @@ namespace Sistema_de_Ventas
             }
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void btnBuscar_Click_1(object sender, EventArgs e)
         {
             int indexBusqueda = -1;
             if (txtBusqueda.Text == "")
@@ -59,7 +59,7 @@ namespace Sistema_de_Ventas
             dtgClientes.Rows[indexBusqueda].Selected = true;
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             miCliente.misClientes.RemoveAt(dtgClientes.CurrentCell.RowIndex);
             miCliente.SerializarLista();
@@ -67,7 +67,7 @@ namespace Sistema_de_Ventas
             LimpiarDatos();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             foreach (Control control in datosContainer.Controls)
             {
@@ -101,14 +101,13 @@ namespace Sistema_de_Ventas
             LimpiarDatos();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
         {
             LimpiarDatos();
         }
 
-        private void dtgClientes_SelectionChanged(object sender, EventArgs e)
+        private void dtgClientes_SelectionChanged_1(object sender, EventArgs e)
         {
-            lblIndex.Text = $"{dtgClientes.CurrentCell.RowIndex}";
             miCliente.DeserializarLista();
             if (dtgClientes.CurrentCell.RowIndex >= 0 && dtgClientes.CurrentCell.RowIndex < miCliente.misClientes.Count)
             {

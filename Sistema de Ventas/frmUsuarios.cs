@@ -72,7 +72,7 @@ namespace Sistema_de_Ventas
 
             if (!match.Success)
             {
-                MessageBox.Show("Ingrese una direccion de correo valida");
+                MessageBox.Show("Ingrese una direccion de correo valida.");
                 return;
             }
 
